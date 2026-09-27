@@ -4,9 +4,9 @@ Your repo contains its own operating manual (`CLAUDE.md` + `rules/`). Your AI as
 
 **Watch first** (36 seconds, no sound needed): the whole journey, step by step.
 
-<video controls poster="assets/journey-poster.png" width="1280" src="assets/journey.mp4"></video>
+<video controls poster="https://raw.githubusercontent.com/Zer0Cool79/main-street/main/template/docs/assets/journey-poster.png" width="1280" src="https://github.com/Zer0Cool79/main-street/releases/download/media-v1/journey.mp4"></video>
 
-[Watch the walkthrough video](assets/journey.mp4) (MP4, 36 seconds)
+[Watch the walkthrough video](https://github.com/Zer0Cool79/main-street/releases/download/media-v1/journey.mp4) (MP4, 36 seconds)
 
 ## Getting started
 
