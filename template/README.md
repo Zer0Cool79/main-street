@@ -46,6 +46,7 @@ Do these in order. Each one is small; together they take an afternoon.
 - [ ] **Try one tiny change.** Pick something harmless, like the announcement banner: "Add a banner: welcome to our new website!" Watch it appear on the preview site, then say "ship it."
 - [ ] **Set up your keys.** [docs/api-keys.md](docs/api-keys.md) walks you (and your AI) through the two free keys: one so the contact form emails you, one for visitor stats. Skip them and the site still works. It just does a little less.
 - [ ] **Learn the undo.** Read "Made a mistake?" below. It takes 30 seconds and you'll feel much braver afterwards.
+- [ ] **Need a logo, a video, or online selling?** [docs/connectors.md](docs/connectors.md) shows how your AI can borrow other apps (Canva, Higgsfield, Shopify), with copy-paste requests.
 
 Then, when you're ready: [docs/setup-guide.md](docs/setup-guide.md) (your own domain name), [docs/owner-quickstart.md](docs/owner-quickstart.md) (getting good at directing your AI), [docs/faq.md](docs/faq.md).
 

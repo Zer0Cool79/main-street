@@ -24,6 +24,7 @@ This file stays light on purpose. Detail loads on demand:
 | Touch anything with a **database** | `rules/supabase.md` |
 | Change **SEO-relevant** things (titles, URLs, redirects, sitemap) | `rules/seo.md` |
 | Change the **announcement banner or holiday hours** | `rules/content.md` (announcements section) |
+| The owner asks for a **logo, promo image, video, or online selling** your chat AI can't make by itself | `rules/connectors.md` |
 | Debug something odd, or move files | `rules/traps.md` |
 | Onboard a human, or explain the stack | `README.md` and `docs/setup-guide.md` |
 
