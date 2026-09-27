@@ -2,13 +2,15 @@
 
 Your AI assistant is good with words and websites. A **connector** is a plug-in that lets it also use another app, right inside your chat. Think of it like giving your assistant a new tool for its toolbox.
 
+**Start with this: you do not need any of this.** Your AI tool plus your domain name is the whole core setup, and it gets you far. Everything below is an optional extra for later, if you ever want it. Some extras cost money; the core never does.
+
 ## When would you want one?
 
 - **A logo or promo images** (a sale flyer, a social media graphic): connect to **Canva**.
 - **A short video** for your homepage (your shop, your products, in motion): connect to **Higgsfield**.
 - **Selling products online**: connect to **Shopify**.
 
-You do not need any of these to have a great website. They are extras for specific jobs.
+All optional. Skip this whole page and your website is still complete.
 
 ## Canva: logos and promo images
 
