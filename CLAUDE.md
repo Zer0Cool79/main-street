@@ -29,8 +29,8 @@ This file stays light on purpose. Detail loads on demand:
 
 ## Hard rules
 
-1. **Preview first, always.** No change goes to `main` without the owner approving a preview URL with their eyes. Open a branch, push it, hand them the Cloudflare preview link (`<branch>.<site>.pages.dev`). Merge only after they say yes. Routine or urgent, no exceptions for beginners.
-2. **Pushing to `main` deploys to the live site immediately.** There is no staging. Say what you verified, link the preview they approved, and confirm before merging.
+1. **Stage first, always.** No change goes to `main` without the owner approving it on the staging site first. Push to the `staging` branch, hand them the staging link (`staging.<site>.pages.dev`). Merge `staging` into `main` only after they say yes. Routine or urgent, no exceptions for beginners.
+2. **Merging to `main` deploys to the live site immediately; pushing to `staging` updates the staging site.** There is no other staging. Say what you verified, link the staging site they approved, and confirm before merging to `main`.
 3. **Never run a manual deploy** (`wrangler deploy`, `npx wrangler pages deploy`, or the Cloudflare dashboard's retry-as-deploy). Deploys happen from git. Manual deploys bypass the record and the next push can silently revert them.
 4. **Never commit secrets.** API keys live in Cloudflare (Pages → Settings → Environment variables) and in `.dev.vars` locally, never in this repo. If a feature needs a key that isn't set, it must degrade gracefully (show direct contact info, hide the form), never break the page.
 5. **Business facts beat cleverness.** Hours, prices, addresses, and names come from `site.config.json` and from the owner's mouth. Never invent testimonials, credentials, prices, or claims. When the owner dictates copy, their words win verbatim.
@@ -44,14 +44,14 @@ The owner may never have used git, a terminal, or GitHub. So:
 - **No jargon without a translation.** "I'll open a pull request" becomes "I'll prepare the change on a preview copy of your site and send you a link to look at."
 - **Explain, then do.** One or two plain sentences about what you're about to change and why, *before* you change it.
 - **Confirm before anything irreversible.** Deleting, DNS, email, customer data: state the risk in plain words and wait.
-- **Every change ends with a link.** A preview URL they can open on their phone. That link is the approval mechanism.
+- **Every change ends with a link.** The staging URL, which they can open on their phone. That link is the approval mechanism: "here's the staging site, say 'ship it' when it looks right."
 - **Teach the undo.** When you ship, remind them: "If anything looks off, Cloudflare → Deployments → Rollback, one click."
 
 Full detail: `rules/beginner-mode.md`.
 
 ## Sync first
 
-More than one person or machine may edit this repo. Start every session with `git fetch origin` and rebase onto `origin/main` if it moved; check again before pushing. If two edits collide on the owner's words, their words win verbatim and the structural change adapts around them.
+More than one person or machine may edit this repo. Start every session with `git fetch origin` and make sure your `staging` branch is up to date; check again before pushing. If two edits collide on the owner's words, their words win verbatim and the structural change adapts around them.
 
 ## Stack, in one breath
 

@@ -1,17 +1,21 @@
 # Deploy rules — shipping a change
 
-Pushing to `main` deploys to the live site. Cloudflare Pages builds (`npm run build` → `dist/`) and publishes automatically. **The push is the release.** There is no staging environment.
+Two branches, two sites. Simple on purpose:
+
+- **`staging` branch → staging site** at `staging.<project>.pages.dev`. Every change lands here first. The owner bookmarks one link and always knows where to look.
+- **`main` branch → production** at their domain. Only ever updated by merging `staging` after the owner approves what they saw on staging.
+
+Pushing to `staging` rebuilds the staging site. Merging `staging` into `main` rebuilds production. **The push is the release.** There is no other environment.
 
 ## The flow (beginner default)
 
-1. Make the change on a **branch**, not `main`.
-2. Push the branch. Cloudflare builds a **preview URL** (`<branch>.<site>.pages.dev`).
-3. Hand the owner the preview link. In beginner-friendly words: "Here's a preview copy of your site with the change. Open it on your phone and look around."
-4. **Wait for their approval.** "Looks good, ship it" or equivalent. Never assume.
-5. Merge to `main`. Cloudflare rebuilds and deploys in about a minute.
-6. Run `npm run audit https://<their-domain>` against production and report the result.
+1. Make the change and push it to **`staging`** (commit straight to the branch; no feature-branch ceremony for routine changes).
+2. Hand the owner the staging link. In beginner-friendly words: "Here's your staging site with the change. Open it on your phone and look around."
+3. **Wait for their approval.** "Looks good, ship it" or equivalent. Never assume.
+4. Merge `staging` into `main` and push. Cloudflare rebuilds and deploys production in about a minute.
+5. Run `npm run audit https://<their-domain>` against production and report the result.
 
-Routine small fixes may go straight to `main` *only* once the owner is experienced and has explicitly said they want that. Default to the preview flow.
+The staging link IS the approval step. If the owner ever asks "where do I check?", the answer is always the same link.
 
 ## Before you claim it works
 
@@ -39,7 +43,7 @@ Don't run `wrangler deploy`, `wrangler pages deploy`, or dashboard deploy button
 
 Two ways, easiest first:
 
-1. **Dashboard (no terminal):** Cloudflare → Pages → the site → Deployments → find the last good deployment → ⋯ → **Rollback**. This is the one to teach the owner.
-2. **Git:** revert the merge commit on `main` and push. The revert itself gets a preview first, like any change.
+1. **Dashboard (no terminal):** Cloudflare → Pages → the site → Deployments → find the last good deployment → ⋯ → **Rollback**. This is the one to teach the owner. (Works for production; staging fixes itself on the next push to `staging`.)
+2. **Git:** revert the merge commit on `main` and push. The revert itself goes to staging first, like any change.
 
 Never hand-edit production. Never "fix it live and commit later."

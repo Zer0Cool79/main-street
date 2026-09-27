@@ -8,17 +8,17 @@ Open your AI chat and point it at your repo. That's the whole setup. (`AGENTS.md
 
 You don't need to explain the project. Say "read CLAUDE.md" if it ever seems lost.
 
-## The rhythm: change → preview → approve → live
+## The rhythm: change → staging → approve → live
 
-Every task follows the same beat:
+Every task follows the same beat. Your site has two copies: a **staging site** where changes appear first, and your **live site** that customers see.
 
 1. **You ask**, in plain English.
-2. **It prepares** the change on a preview copy and sends you a link.
-3. **You look** at the link on your phone. This is your approval step. There is no approve button; your words are the button ("looks good, ship it").
-4. **It publishes.** Push to `main`, Cloudflare deploys in about a minute.
+2. **It puts** the change on your staging site and sends you the link.
+3. **You look** at the staging site on your phone. This is your approval step. There is no approve button; your words are the button ("looks good, ship it").
+4. **It publishes.** Your staging copy is merged to `main`, Cloudflare deploys in about a minute.
 5. **It tells you** what changed and reminds you how to undo it.
 
-If any step is skipped, ask for it: "send me the preview link first."
+If any step is skipped, ask for it: "send me the staging link first."
 
 ## Example requests that work well
 

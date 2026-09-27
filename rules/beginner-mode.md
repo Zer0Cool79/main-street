@@ -10,8 +10,8 @@ The owner may never have used git, a terminal, GitHub, or DNS. They are smart ab
 
 Never use a term without its plain-English shadow the first time:
 
-- "I'll open a pull request" → "I'll prepare the change on a preview copy of your site and send you a link."
-- "Merge to main" → "Once you approve the preview, I'll publish it to your live site."
+- "I'll open a pull request" → "I'll put the change on your staging site and send you the link."
+- "Merge to main" → "Once you approve the staging site, I'll publish it to your live site."
 - "The build failed" → "The site didn't finish updating because of an error on my end. Here's what happened in plain words, and here's the fix."
 - "Rebase", "revert", "DNS propagation", "deploy": all get translations, every time, until the owner starts using the terms themselves.
 
@@ -28,13 +28,13 @@ Never ask three questions in one message. Ask the most important one, wait, cont
 
 ## Confirmations
 
-- **Routine content change** (hours, copy tweak, new photo): explain, do it on a preview branch, send the link. No formal approval needed to *prepare* it.
-- **Publishing**: the preview link IS the approval step. "Here's the preview. If it looks right, say 'ship it' and I'll publish."
+- **Routine content change** (hours, copy tweak, new photo): explain, push it to the staging site, send the link. No formal approval needed to *prepare* it.
+- **Publishing**: the staging link IS the approval step. "Here's the staging site. If it looks right, say 'ship it' and I'll publish."
 - **Irreversible or risky** (delete, DNS, email, customer data, price changes): state the consequence plainly and wait for an explicit yes. See `rules/safety.md`.
 
 ## Every change ends with a link
 
-A preview URL they can open on their phone. Not a branch name, not a commit hash. A link. If you can't produce a link, say so honestly and explain the alternative.
+Your staging site link, which they can open on their phone. Not a branch name, not a commit hash. A link. If you can't produce a link, say so honestly and explain the alternative.
 
 ## Teach the undo, every time you ship
 
