@@ -26,11 +26,21 @@ If you'd rather not install anything, this works with plain claude.ai or chatgpt
 
 Path B is slower for big changes (you're the hands), but it needs zero setup and works from any computer, including a Chromebook or a library PC.
 
-## Which path am I on?
+## Which AI do you use? (interface map)
 
-- If your AI can see your files and make the change itself: Path A.
-- If you're copying answers from a chat into GitHub yourself: Path B.
-- Either way, the rhythm is the same: change goes to the staging preview, you approve it on your phone, you say "ship it." See [owner-quickstart.md](owner-quickstart.md).
+The contract is the same everywhere: `CLAUDE.md` + `rules/` tell any AI its job. Only the *write path* changes: can it put the change on your staging site itself, or does it hand you the change to apply?
+
+| Your AI | How it sees your files | What happens when you ask for a change |
+|---|---|---|
+| **Claude Code** (terminal app, Claude subscription) | Opens your site folder directly | Full loop: it edits, commits, pushes; you approve the preview and say "ship it" |
+| **Claude Cowork** (Claude app, paid plans) | You grant it your site folder; it reads and writes files, no terminal | It edits files directly; sync the folder to GitHub with the bridge below |
+| **muse.ai** (this chat) | Full access while you work here | Full loop: edits, preview branches, deploys, all handled in chat |
+| **ChatGPT app / agent mode** | Varies by version: a local folder or the GitHub connector | If it edits files directly, sync with the bridge below; otherwise it drafts and you apply it |
+| **claude.ai or chatgpt.com in the browser** | Attach files, or connect your GitHub repo if your plan offers it | It drafts the change; you apply it with GitHub's edit button ([Path B](#path-b-web-chat-plus-github-in-your-browser-nothing-to-install)) |
+
+**The no-terminal bridge:** if your AI edits files on your computer but can't push to GitHub itself, install GitHub Desktop (free, from GitHub). It syncs your folder with one click, no commands. Your AI will tell you when to press it.
+
+**Interfaces change fast.** If yours isn't listed or the menus moved, the two questions that matter are: *can it see my files?* and *can it get changes to GitHub?* Tell your AI the answers and say "get me to the staging preview."
 
 ## Copy-paste first message
 
