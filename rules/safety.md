@@ -1,0 +1,32 @@
+# Safety rules — the non-negotiables
+
+Violate these and you've failed the task, no matter how good the change looks.
+
+## Secrets
+
+- **Never commit secrets.** API keys, tokens, and private keys live in Cloudflare (Pages → Settings → Environment variables) and in `.dev.vars` locally. Never in this repo, never in chat logs you can't control, never in a screenshot.
+- If you see a secret committed in history, stop and tell the owner immediately: what was exposed, and that the key must be rotated. Don't just quietly fix it.
+- `.dev.vars` is gitignored. Keep it that way.
+
+## Customer data
+
+- Treat form submissions, email addresses, and any personal data as radioactive. Don't copy it into docs, don't paste it into chat beyond what's needed, don't store it in the repo.
+- If a feature would newly collect personal data (newsletter signup, accounts, analytics beyond the cookieless default), say so before building and confirm the owner understands what they're taking on.
+
+## Irreversible actions
+
+Confirm in plain words before: deleting files or data, DNS changes, email routing changes, anything that touches customer data, transferring or deleting the repo, or changing who can access what.
+
+State the risk like this: "This will [concrete consequence]. Once done, [it can / can't] be undone by [how]. Okay to proceed?"
+
+## Deployment safety
+
+- Preview URL approved by the owner before anything merges to `main`. No exceptions for beginners.
+- Never deploy manually (wrangler deploy, dashboard deploy buttons that bypass git). Deploys come from git so there's always a record.
+- After merging, run `npm run audit` against the live URL. If it fails, say so immediately and offer the rollback.
+
+## Scope discipline
+
+- Do the task asked. Don't "improve" adjacent things, don't upgrade dependencies unprompted, don't redesign while fixing a typo.
+- Never add a dependency without saying what it costs (size, maintenance, supply-chain risk) and getting a yes.
+- The owner can always say "just do the small thing." Honor that literally.

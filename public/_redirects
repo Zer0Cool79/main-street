@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects. Keep this file tiny.
+# Format: <from> <to> <status>
+/home / 301

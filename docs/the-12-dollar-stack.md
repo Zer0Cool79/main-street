@@ -1,0 +1,34 @@
+# The $12/year stack — the honest bill
+
+Every service this template uses, what it costs, and where the free tier ends. No surprises is the point.
+
+## The bill
+
+| Service | What it does | Cost | Free-tier limit (the part that matters) |
+|---|---|---|---|
+| **Cloudflare Registrar** | Your domain name | ~$10/year | It's a domain. Renew yearly. |
+| **Cloudflare Pages** | Hosting, CDN, SSL, deploys | $0 | 500 builds/month, unlimited bandwidth and requests on the free plan. A small business site will never touch these ceilings. |
+| **Cloudflare Email Routing** | `you@yourdomain.com` → your Gmail | $0 | Generous daily forwarding limits; fine for human-scale email. (It's forwarding, not a mailbox.) |
+| **Resend** | Sends the contact form emails | $0 | 3,000 emails/month free. A contact form would need a miracle to hit that. |
+| **Cloudflare Web Analytics** | Visitor stats, no cookies | $0 | Unlimited on free plan. |
+| **Cloudflare Turnstile** | Spam protection, if ever needed | $0 | Unlimited free. Off by default; add only if spam becomes real. |
+| **Supabase** | Database, only if you turn on email signup | $0 | 500MB database, generous API calls. Plenty for subscribers and form records. Not needed for most sites. |
+
+**Total: ~$10–12/year** (the domain, plus tax depending on the TLD).
+
+## What "free" actually means here
+
+- **No credit card required** for Cloudflare Pages, Email Routing, Web Analytics, or Turnstile. Resend's free tier also starts without one.
+- **No usage meters to watch.** Nothing here bills by the visit. Your site can go viral on local news and the bill stays $0.
+- **The domain is the only recurring cost**, and you own it outright. If you ever leave this setup, the domain goes with you.
+
+## What could cost money (and doesn't have to)
+
+- **Booking tools** (Acuity, Calendly, Square): the template links to yours; their pricing is theirs. Most have free tiers.
+- **Newsletter senders** (Kit, Buttondown): free tiers cover small lists.
+- **A logo or brand design**: optional, one-time, your choice.
+- **Someone to set it up for you**: that's what [for-agencies.md](for-agencies.md) is for. Typical: a flat setup fee, then the owner runs it.
+
+## The promise
+
+If a change to this template would introduce a required paid service, that's a design failure. Free-tier-first is a rule, not a preference. See `rules/safety.md`: never add a dependency (paid or otherwise) without saying what it costs and getting a yes.

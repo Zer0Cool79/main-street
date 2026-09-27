@@ -1,0 +1,33 @@
+# Feature catalog
+
+Features are switches in `site.config.json` under `"features"`, plus the HTML blocks they control (`<!-- feature:name --> ... <!-- /feature:name -->`). Turning a feature on is a one-line config change plus any content the feature needs. The owner never has to do this themselves: they say "turn on the gallery" to their AI assistant and it handles the rest.
+
+**Defaults:** contactForm, announcementBanner, faq, gallery, menu, testimonials, and analytics are on in the demo. blog, booking, and emailSignup are off.
+
+| Feature | Flag | Doc | What it adds |
+|---|---|---|---|
+| Contact form | `contactForm` | [contact-form.md](contact-form.md) | Contact section + Pages Function that emails via Resend |
+| Announcement banner | `announcementBanner` | [announcement-banner.md](announcement-banner.md) | One-sentence banner for closures, news, specials |
+| Photo gallery | `gallery` | [gallery.md](gallery.md) | Photo grid, lazy-loaded, optimized |
+| Testimonials | `testimonials` | [testimonials.md](testimonials.md) | Customer quotes section |
+| Menu / price list | `menu` | [menu.md](menu.md) | Structured list of items and prices |
+| FAQ | `faq` | [faq.md](faq.md) | Expandable questions (also feeds SEO) |
+| Blog | `blog` | [blog.md](blog.md) | Simple dated posts, no CMS |
+| Booking link | `booking` | [booking.md](booking.md) | "Book now" buttons pointing at your booking tool |
+| Email signup | `emailSignup` | [email-signup.md](email-signup.md) | Newsletter capture (needs Supabase + a sender) |
+
+## How toggling works
+
+1. Flip the flag in `site.config.json` (`true`/`false`), or run `npm run preset <name>` for a bundle.
+2. Add the content the feature needs (photos in `public/images/`, quotes from the owner, menu items).
+3. `npm run build` strips disabled features' HTML entirely: off means zero bytes shipped, not hidden with CSS.
+4. Ship via the normal flow: branch → preview URL → owner approves → merge.
+
+## Adding a new feature
+
+1. Wrap its HTML in `<!-- feature:yourname --> ... <!-- /feature:yourname -->`.
+2. Add the flag to `site.config.json` and `site.schema.json`.
+3. Write `features/yourname.md` following the format below.
+4. Add a row to the table above.
+
+Feature docs answer: what it is, how to turn it on, what the owner must provide, what it costs (usually $0), how to customize it, and what can go wrong.

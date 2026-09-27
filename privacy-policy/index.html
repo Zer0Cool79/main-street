@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | {{business.name}}</title>
+  <meta name="description" content="Privacy policy for {{business.name}}.">
+  <link rel="canonical" href="https://{{site.domain}}/privacy-policy/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">{{business.name}}</a>
+    </div>
+  </header>
+  <main id="main">
+    <section>
+      <div class="wrap legal">
+        <p class="eyebrow">Legal</p>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: {{year}}</p>
+
+        <h2>What we collect</h2>
+        <p>{{business.name}} collects only what it needs to run the bakery website:</p>
+        <ul>
+          <li><strong>Contact form messages.</strong> If you write to us, we receive your name, email address, and message so we can reply. We keep messages as long as the conversation needs, then delete them.</li>
+          <li><strong>Anonymous analytics.</strong> We use Cloudflare Web Analytics, which is cookieless and does not track you across sites. It tells us which pages are popular, nothing about who visited.</li>
+        </ul>
+
+        <h2>What we never do</h2>
+        <p>We do not sell, rent, or share your personal information with anyone. We do not run advertising trackers. We do not add contact form senders to a marketing list.</p>
+
+        <h2>Cookies</h2>
+        <p>This site sets no cookies of its own. If embedded content (such as a map link you click) sets cookies, that is governed by that provider's policy.</p>
+
+        <h2>Your rights</h2>
+        <p>Write to <a href="mailto:{{business.email}}">{{business.email}}</a> any time to ask what we hold about you, or to ask us to delete it. We will do it promptly.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes in a meaningful way, we will note the new date above. Small clarifications may be made without fanfare.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-base">
+        <span>© {{year}} {{business.name}}. All rights reserved.</span>
+        <span><a href="/">Home</a> · <a href="/terms-of-service/">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service | {{business.name}}</title>
+  <meta name="description" content="Terms of service for {{business.name}}.">
+  <link rel="canonical" href="https://{{site.domain}}/terms-of-service/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">{{business.name}}</a>
+    </div>
+  </header>
+  <main id="main">
+    <section>
+      <div class="wrap legal">
+        <p class="eyebrow">Legal</p>
+        <h1>Terms of Service</h1>
+        <p class="updated">Last updated: {{year}}</p>
+
+        <h2>The short version</h2>
+        <p>This website belongs to {{business.name}}. Use it to browse the menu, find our hours, and get in touch. Do not misuse it.</p>
+
+        <h2>Content</h2>
+        <p>Menu items, prices, and hours are kept current but can change without notice, especially when something sells out. Photos show our real products but individual items vary, as handmade things do.</p>
+
+        <h2>Orders and messages</h2>
+        <p>Messages sent through the contact form are requests, not confirmed orders. An order is confirmed only when we reply and say so. Custom cake orders may require a deposit, which we will discuss with you directly.</p>
+
+        <h2>Acceptable use</h2>
+        <p>Do not attempt to disrupt the site, harvest other visitors' information, or submit spam through the contact form. Automated abuse will be blocked.</p>
+
+        <h2>Liability</h2>
+        <p>The site is provided as-is. To the extent the law allows, {{business.name}} is not liable for issues arising from your use of the website itself. (Issues with an actual croissant are a different matter, please tell us in person.)</p>
+
+        <h2>Contact</h2>
+        <p>Questions about these terms: <a href="mailto:{{business.email}}">{{business.email}}</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-base">
+        <span>© {{year}} {{business.name}}. All rights reserved.</span>
+        <span><a href="/">Home</a> · <a href="/privacy-policy/">Privacy</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

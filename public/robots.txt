@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# NOTE: at build time the site-config plugin regenerates this file
+# with an absolute Sitemap: line for your domain.
