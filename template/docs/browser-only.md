@@ -45,9 +45,13 @@ Your site starts as a folder of files called the **template**. You will download
 **Step 3: Upload the template's contents.**
 
 1. On your new (empty) repository page, click the **uploading an existing file** link.
-2. Go back to the `template` folder window from Step 1. **Open the template folder, select everything inside it** (Ctrl+A on Windows, Cmd+A on Mac), and drag it all into the GitHub upload area. You are uploading the *contents* of the template folder, not the folder itself: the file list on GitHub should start with `index.html`, `site.config.json`, `CLAUDE.md`, and so on.
-3. Wait until every file finishes uploading (there are about 80; give it a minute).
-4. Click **Commit changes** (the green button). Leave the message as is.
+2. Go back to the `template` folder window from Step 1. Select everything inside it (Ctrl+A on Windows, Cmd+A on Mac): the folders AND the loose files, all at once.
+3. **Drag that whole selection into the GitHub upload area.** Use drag and drop, not the "choose your files" link: the link uploads every file as one flat pile and the folders are lost; dragging keeps the inside of each folder intact. (You are uploading the *contents* of the template folder, not the folder itself.)
+4. Wait until every file finishes uploading (there are about 88; give it a minute or two).
+5. **Check the staged list before you commit.** You should see folder paths like `docs/browser-only.md` and `content/brand/photos/`. If you see bare filenames with "dup" markers instead (two `index.html`, three `README.md`), the folders did not come along: remove every file and re-drag, making sure you drag the folders themselves, not a file picker selection.
+6. Click **Commit changes** (the green button). Leave the message as is.
+
+Note: the hidden `.github` folder often does not come along in a drag (your computer hides it even from itself). Step 4 checks for it.
 
 **Step 4: Check the hidden folder made it.**
 
