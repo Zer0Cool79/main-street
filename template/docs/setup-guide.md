@@ -57,12 +57,13 @@ You want Cloudflare holding your DNS. That's what gives your staging site a clea
 
 ## Step 4: Connect Cloudflare Pages (10 minutes)
 
-1. In Cloudflare: **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
+1. In Cloudflare: **Workers & Pages** → **Create** → **Continue to Pages** (the website option) → **Import an existing Git repository** → **Get started** → **Connect to Git**.
 2. Authorize GitHub if asked, and pick your repo.
 
    > **Repo not showing up?** ("No repositories matching") The Cloudflare Pages GitHub App is usually only allowed to see *some* of your repos. Fix it on GitHub: click your avatar → **Settings** → **Applications** → **Installed GitHub Apps** → **Cloudflare Pages** → **Configure** → under *Repository access*, choose **All repositories** (or pick your site's repo) → **Save**. Back in Cloudflare, refresh the repo list. It'll appear. (Make sure it's the **Cloudflare Pages** app, not Cloudflare Workers, they're separate.)
 3. Build settings:
    - Production branch: `main`
+   - Framework preset: leave at **None**. (There is no plain Vite option in the list; the similar-looking VitePress and React (Vite) are different things. Do not pick them.)
    - Build command: `npm run build`
    - Build output directory: `dist`
    - (Leave everything else default.)

@@ -27,7 +27,7 @@ The one-time setup is a short command sequence run by the helper (or the owner's
 $ node scripts/new-site.mjs ../birch-bakehouse
 
 Done! Your new site is ready at /tmp/birch-bakehouse
-  84 files copied and verified.
+  88 files copied and verified.
   Git repository initialized with everything staged.
 
   One-time git setup (so you can save versions of your site):
