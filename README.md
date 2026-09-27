@@ -4,9 +4,9 @@
 
 **Watch how it works** (36 seconds, no sound needed):
 
-<video controls poster="template/docs/assets/journey-poster.png" width="1280" src="template/docs/assets/journey.mp4"></video>
+<video controls poster="https://raw.githubusercontent.com/Zer0Cool79/main-street/main/template/docs/assets/journey-poster.png" width="1280" src="https://github.com/Zer0Cool79/main-street/releases/download/media-v1/journey.mp4"></video>
 
-[Watch the walkthrough video](template/docs/assets/journey.mp4) (MP4, 36 seconds)
+[Watch the walkthrough video](https://github.com/Zer0Cool79/main-street/releases/download/media-v1/journey.mp4) (MP4, 36 seconds)
 
 ## Is this for you?
 
