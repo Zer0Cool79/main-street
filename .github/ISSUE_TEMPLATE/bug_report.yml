@@ -1,0 +1,27 @@
+name: Bug report
+description: Something is broken or confusing
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, and what went wrong? Exact steps help the most.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where?
+      description: Toolkit repo, or a site built from the template? Which page or file?
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else?
+      description: Error messages, screenshots, your OS and Node version. Never paste secrets or API keys.

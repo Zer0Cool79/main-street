@@ -1,0 +1,20 @@
+name: Idea or feature request
+description: Suggest an improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's the idea?
+      description: Describe it in plain language, the way you'd explain it to a shop owner.
+    validations:
+      required: true
+  - type: textarea
+    id: who
+    attributes:
+      label: Who does it help?
+      description: The business owner, the person setting sites up, or both?
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered

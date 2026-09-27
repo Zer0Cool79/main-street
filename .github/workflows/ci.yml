@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Scaffold a fresh site
+        run: node scripts/new-site.mjs /tmp/site --git
+
+      - name: Install
+        run: cd /tmp/site && npm install --no-audit --no-fund
+
+      - name: Setup wizard (defaults)
+        run: cd /tmp/site && npm run setup < /dev/null
+
+      - name: Typecheck
+        run: cd /tmp/site && npm run typecheck
+
+      - name: Build
+        run: cd /tmp/site && npm run build
+
+      - name: Audit
+        run: |
+          cd /tmp/site
+          (npx vite preview --port 4173 >/tmp/preview.log 2>&1 &)
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:4173/ >/dev/null && break
+            sleep 1
+          done
+          node scripts/audit-site.mjs http://localhost:4173
