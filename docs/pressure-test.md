@@ -35,12 +35,14 @@ Scenario: the owner broke something at 9pm on a Saturday, no developer reachable
 
 Verdict: a panicking non-technical owner can get the site back in under 5 minutes with docs alone. The weak link is step 0: the owner has to *remember the README exists*. Mitigation: the golden loop is simple enough to remember ("preview first, ship it after"), and the rollback path is in the first-week checklist they already read.
 
-### Zero-skill documentation walkthrough (reviewed, not executed)
+### Zero-skill documentation walkthrough (reviewed, then executed live)
 
 Read the template README, `docs/examples.md`, and `docs/api-keys.md` as a first-time owner who has never heard of git:
 - No terminal commands, no "branch"/"merge"/"repo" vocabulary in the owner path. The owner hears "preview copy" and "ship it."
 - Every key-setup page has a copy-paste AI prompt; the doc explicitly says "do this with your AI."
 - Honest gap: the *initial* scaffold (`new-site.mjs`, `npm install`) still needs someone comfortable with a terminal (see "Pre-publication limitation" below). The docs don't pretend otherwise.
+
+Update 2026-09-27: the **browser-only path was executed end to end** in a live browser with a disposable private repo (ZIP download, repo creation, pencil edits, staging branch, Cloudflare connect, production deploy, staging preview loop, PR merge to production), then cleaned up. It found and fixed three doc gaps: GitHub's file picker flattens folder structure (docs now require drag-and-drop), Cloudflare has no plain Vite preset (docs say use None), and the staging preview only appears after a post-connection commit (docs reordered). Staging preview wording corrected: unlisted, not access-protected.
 
 ## Devil's advocate
 
@@ -91,3 +93,4 @@ The owner launches, then ignores the site for a year. What survives?
 | 2026-09-27 | Hostile wizard input battery (empty/emoji/200-char/invalid-then-valid/Ctrl-C) | All pass; 200-char rejection + Ctrl-C safety verified |
 | 2026-09-27 | Corrupt + deleted config builds | Plain-language errors, verified |
 | 2026-09-27 | Audit placeholder INFO | Fires correctly on starter copy; non-failing |
+| 2026-09-27 | Browser-only path live test (disposable private repo, deleted after) | PASS end to end: ZIP download, repo creation, pencil edits, staging branch, Cloudflare connect, production + staging preview deploys, PR merge to production. Fixed 3 doc gaps (folder drag-and-drop, Vite preset None, staging preview appears only after post-connection commit) and corrected "private preview" wording |

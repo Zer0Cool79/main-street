@@ -41,8 +41,8 @@ Open the address it prints (usually http://localhost:5173). The copy is neutral 
 Full walkthrough inside the site: `docs/setup-guide.md`. The short version:
 
 1. **Buy the domain** at Cloudflare Registrar (~$10/year, no markup).
-2. **Connect the site's repo to Cloudflare Pages**: Pages → Create → Connect to Git → pick the repo. Build command `npm run build`, output directory `dist`.
-3. **Push to the `staging` branch** → Cloudflare builds a preview at `staging.yourdomain.com`. The owner reviews every change here.
+2. **Connect the site's repo to Cloudflare Pages**: Workers & Pages → Create → Continue to Pages → Import an existing Git repository → Get started → Connect to Git → pick the repo. Build command `npm run build`, output directory `dist`, framework preset None (there is no plain Vite option; do not pick the similar-looking VitePress or React (Vite)).
+3. **Push to the `staging` branch** → Cloudflare builds a preview at `staging.yourdomain.com`. The preview row appears after your first commit to `staging` once Cloudflare is connected; it will not exist before that. The owner reviews every change here.
 4. **Owner says "ship it"** → merge `staging` into `main` → the live domain updates in about a minute.
 
 ## 5. Hand it over

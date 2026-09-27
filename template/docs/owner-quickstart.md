@@ -16,7 +16,7 @@ Two steps, then you're talking to your web developer.
 
 ## The rhythm: change → staging → approve → live
 
-Every task follows the same beat. Your site has two copies: a **staging site** (`staging.yourdomain.com`) where changes appear first, and your **live site** that customers see.
+Every task follows the same beat. Your site has two copies: a **staging site** (`staging.yourdomain.com`, or `staging.<project>.pages.dev` if you haven't attached a custom domain yet) where changes appear first, and your **live site** that customers see.
 
 1. **You ask**, in plain English.
 2. **It puts** the change on your staging site and sends you the link.
