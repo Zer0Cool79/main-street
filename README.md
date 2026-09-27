@@ -10,6 +10,8 @@ https://github.com/user-attachments/assets/752e5e89-482f-40f9-b1c0-d4fab41c60b9
 
 https://github.com/user-attachments/assets/a0c8180d-cec6-4d3b-bd72-366a873c2776
 
+(The second video shows the one-time setup, terminal and all. Day to day looks like the first video: one message, one preview link, "ship it.")
+
 ## Is this for you?
 
 - You own a small business and want a website that looks professional.
@@ -20,7 +22,7 @@ If that's you, keep reading. You need about an afternoon and a domain name (abou
 
 ## How it works (the 30-second version)
 
-1. **You say what you want**, in plain words: "Change our Saturday hours to 9 to 2." You say it to whatever AI chat you already use.
+1. **You say what you want**, in plain words: "Change our Saturday hours to 9 to 2." You say it to the AI chat you already pay for. No API keys, no usage billing.
 2. **You get a preview link.** Open it on your phone. It looks exactly like your site with the change applied.
 3. **You say "ship it."** Your live site updates in about a minute.
 
@@ -28,12 +30,12 @@ That's the whole system. The preview step is what keeps your live site safe: not
 
 ## What it costs, honestly
 
-About $12 a year for the domain name. Everything else runs on free tiers. The full breakdown, including free-tier limits and what could optionally cost money: [docs/the-12-dollar-stack.md](docs/the-12-dollar-stack.md).
+About $12 a year for the domain name. Everything else runs on free tiers, plus the AI chat subscription you probably already pay for (no API usage charges, ever). The full breakdown, including free-tier limits and what could optionally cost money: [docs/the-12-dollar-stack.md](docs/the-12-dollar-stack.md).
 
-## You don't need to be technical
+## You don't need to be technical (after one afternoon)
 
-- No code. No terminal. No jargon you have to learn.
-- Your AI assistant is your web developer. It handles the technical parts; you make the decisions.
+- **Day to day: no code, no terminal, no jargon.** You talk to the AI assistant you already pay for. It handles the technical parts; you make the decisions.
+- **The one-time setup takes an afternoon** (or hand it to someone technical): getting the site online. Your AI talks you through it, and it never needs API keys: [setup guide](template/docs/setup-guide.md), [connect your AI](template/docs/connect-your-ai.md).
 - The one thing worth knowing: your secret keys (for the contact form) live in the Cloudflare dashboard, never in your website files. Your AI walks you through it: [template/docs/api-keys.md](template/docs/api-keys.md).
 
 See how easy everyday updates are, each shown as one message you'd send: [template/docs/examples.md](template/docs/examples.md).
@@ -43,6 +45,8 @@ See how easy everyday updates are, each shown as one message you'd send: [templa
 ## Setting up a site (for the person doing the technical setup)
 
 > Everything below is for whoever sets sites up: an agency, a freelancer, or the tech-savvy friend. Business owners can stop here; your site's own README (inside your site's repo) is written for you.
+>
+> **Setting up your own business's site, not someone else's?** You don't need the toolkit workflow below. Grab the `template/` folder and follow [the setup guide](template/docs/setup-guide.md) inside it; that folder is your entire site.
 
 Two repositories, two audiences:
 

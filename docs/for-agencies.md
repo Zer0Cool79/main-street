@@ -4,7 +4,7 @@ This template is owner-first, but it's also a great client-delivery vehicle. Spi
 
 ## The per-client playbook
 
-1. **Click "Use this template"** into the client's GitHub account (or your agency org, then transfer). Their site, their repo, their Cloudflare. You are never the single point of failure.
+1. **Scaffold their site** from the toolkit: `node scripts/new-site.mjs ../client-name`, then push it to a repo in the client's GitHub account (or your agency org, then transfer). Their site, their repo, their Cloudflare. You are never the single point of failure.
 2. **Run the setup wizard together** (`npm run setup`) on a 15-minute call. Apply the closest preset (`npm run preset restaurant`). The client sees their business appear on screen; it sells itself.
 3. **Collect real content**: photos, menu/prices, the words they actually say to customers. Drop photos in `public/images/`, run `npm run optimize-images`.
 4. **Connect their Cloudflare** (their account, their domain): Pages → custom domain → Email Routing → Resend key. All in `docs/setup-guide.md`; do it screensharing so they learn where things live.
