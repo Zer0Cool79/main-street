@@ -4,7 +4,10 @@
 No. The setup wizard asks plain-language questions, and day-to-day updates happen by talking to an AI assistant or editing text on GitHub.com. Reading this FAQ is the hardest technical thing you'll do.
 
 **What does it actually cost?**
-About $10–12/year for the domain name. Everything else is free-tier. Ask your AI assistant for the full honest breakdown (it covers free-tier limits and what could optionally cost money).
+About $10–12/year for the domain name. Everything else is free-tier. Your AI chat subscription (Claude, ChatGPT, or similar) is separate, but it's one most owners already pay for, and this system never adds API usage charges on top of it.
+
+**Do I need to buy API access for the AI?**
+No. Your AI works on the chat subscription you already pay for. This system never uses API keys or usage-based billing, so the AI can't run up a charge. See [connect-your-ai.md](connect-your-ai.md).
 
 **Can I really not get a surprise bill?**
 Correct. No service here bills by usage on the tiers we use. The domain renews yearly; that's the only charge.

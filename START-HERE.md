@@ -2,6 +2,8 @@
 
 Welcome. This checklist takes you from "I have the toolkit" to a live small-business website. No experience assumed. If a step confuses you, open your AI chat (muse.ai, claude.ai, chatgpt.com, or whichever you use) and say "walk me through this step."
 
+**The honest shape of this checklist:** steps 1–3 are the only terminal you'll ever touch (about 15 minutes). Everything after handover, the owner's entire life with the site, is just chatting. See [connect your AI](template/docs/connect-your-ai.md) for how the owner's side connects.
+
 ## 0. Understand what this is
 
 This toolkit is the **generator**. It holds a pristine site template and a scaffolder script. You use it to create one **customer site**: a separate folder (and later its own GitHub repo) that belongs to the business. The business owner lives in their site with their AI assistant; they never see this toolkit.

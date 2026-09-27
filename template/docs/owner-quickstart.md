@@ -8,9 +8,11 @@ https://github.com/user-attachments/assets/752e5e89-482f-40f9-b1c0-d4fab41c60b9
 
 ## Getting started
 
-Your AI needs to see your website's files before it can help. The person who set up your site (Marcus, an agency, whoever) connects your AI chat to your site's files. Every AI does this a little differently (a GitHub connection, uploading files, or a small app on your computer). Ask them: "connect my AI to my website repo."
+Two steps, then you're talking to your web developer.
 
-Once it's connected, open your AI chat and say: **"read CLAUDE.md in my website repo."** That's the whole setup. (If it ever seems lost later, say "read CLAUDE.md" again, that file is its operating manual.)
+**1. Connect your AI to your site.** Follow [docs/connect-your-ai.md](connect-your-ai.md): either give your provider's coding app access to your site folder (recommended; it uses the subscription you already pay for, no API keys), or use plain web chat plus GitHub in your browser (nothing to install).
+
+**2. Say: "read CLAUDE.md."** That's the whole setup. CLAUDE.md is the operating manual your site carries for your AI. (If it ever seems lost later, say "read CLAUDE.md" again.)
 
 ## The rhythm: change → staging → approve → live
 
@@ -60,6 +62,7 @@ If your assistant isn't doing these things, say so: "Explain it like I'm new to 
 
 ## Things worth knowing
 
+- **No AI? No problem.** [docs/editing-in-browser.md](editing-in-browser.md) fixes typos straight on GitHub.com. No install, no chat needed.
 - **You can't break the money.** Every service here is free-tier. There is no bill to accidentally run up.
 - **Almost everything is undoable.** The rollback button in Cloudflare undoes any deployment in one click.
 - **Small asks are best.** "Change the headline" beats "redesign the site." Big changes still work; they just get more preview rounds.

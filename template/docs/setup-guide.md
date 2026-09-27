@@ -7,27 +7,32 @@ The complete walkthrough: from zero to a live website at your own domain. Budget
 - A GitHub account (free).
 - A Cloudflare account (free).
 - About $10/year for the domain name.
-- Nothing installed: your AI chat assistant runs the setup with you in chat. (Node.js from [nodejs.org](https://nodejs.org) is only needed if you want to preview the site on your own computer.)
+- An AI chat subscription you already use (Claude, ChatGPT, or similar). Connect it first: [connect-your-ai.md](connect-your-ai.md). Your AI never needs API keys.
+- Node.js from [nodejs.org](https://nodejs.org), only if you'll run commands on your own computer (the hands-on path in Step 2).
 
-## Step 1: Get your own copy (5 minutes)
+## Step 1: Get your site folder (5 minutes)
 
-1. Open the Main Street template repo on GitHub.
-2. Click the green **Use this template** button, then **Create a new repository**.
-3. Name it after your business (e.g. `acme-plumbing`). Make it **Public** or **Private**, your choice. (Public is fine: your repo contains no secrets. See `rules/safety.md`.)
-4. Click **Create repository**. This is now *your* repo. Your site lives here.
+Your site starts as a copy of the `template/` folder in the Main Street repo.
+
+**Easiest:** ask your AI (connected in [connect-your-ai.md](connect-your-ai.md)): "Download the Main Street template from github.com/davegelinas/main-street and scaffold my site folder." It handles the download, the copy, and the naming.
+
+**By hand:** download the [repo zip](https://github.com/davegelinas/main-street/archive/refs/heads/main.zip), unzip it, and copy everything inside `template/` into a new folder named after your business (e.g. `acme-plumbing`). That folder is your site. Then put it on GitHub: create a new repo there and push the folder (say to your AI: "help me put my site folder on GitHub" for click-by-click help).
 
 ## Step 2: Make it yours (10 minutes)
 
-**The easy way:** open your AI chat (muse.ai, claude.ai, chatgpt.com, or whichever you use) and say "run the setup with me." It asks for your business details in plain language, right in chat, and writes them into `site.config.json`. Pick the preset closest to your kind of business, or skip it.
+**If your AI has access to your site folder** ([Path A](connect-your-ai.md)): say "run the setup with me." It asks for your business details in plain language, right in chat, and writes them into `site.config.json`. Pick the preset closest to your kind of business, or skip it.
 
-**The hands-on way,** on your computer:
+**If you're in a web chat** ([Path B](connect-your-ai.md)): say "interview me for the setup." It asks the same questions here in chat, then hands you the answers to type into the wizard below.
+
+**The hands-on way,** on your computer, from your site folder:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd YOUR-REPO
+cd acme-plumbing
 npm install
 npm run setup
 ```
+
+(Use your real folder name.) `npm install` downloads the build tools (one time). `npm run setup` asks plain-language questions: business name, phone, email, address, domain, what kind of business, then configures everything.
 
 Then preview:
 
@@ -113,7 +118,7 @@ Cloudflare dashboard sidebar → **Analytics & Logs** → **Web Analytics** → 
 
 ## Step 9: Meet your AI web developer
 
-See [owner-quickstart.md](owner-quickstart.md). The short version: open your AI chat, point it at your repo, and talk. The repo explains itself via `CLAUDE.md`. From here on, every update is a conversation.
+See [connect-your-ai.md](connect-your-ai.md) and [owner-quickstart.md](owner-quickstart.md). The short version: connect your AI with the subscription you already pay for (no API keys), say "read CLAUDE.md," and talk. From here on, every update is a conversation.
 
 ## Verify everything
 

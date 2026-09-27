@@ -24,9 +24,9 @@ That's the whole system. One loop, every time, no exceptions. It’s what keeps 
 
 **Watch the whole journey** (36 seconds, no sound needed):
 
-<video controls poster="docs/assets/journey-poster.png" width="1280" src="docs/assets/journey.mp4"></video>
+https://github.com/user-attachments/assets/752e5e89-482f-40f9-b1c0-d4fab41c60b9
 
-[Watch the walkthrough video](docs/assets/journey.mp4) (MP4, 36 seconds)
+(That's the everyday experience: one message, one preview link, "ship it." The one-time setup is a separate afternoon: [docs/setup-guide.md](docs/setup-guide.md).)
 
 **What to say to your AI** (copy-paste any of these):
 
@@ -41,12 +41,14 @@ More examples, including before-and-after walkthroughs: [docs/examples.md](docs/
 
 Do these in order. Each one is small; together they take an afternoon.
 
+- [ ] **Connect your AI.** [docs/connect-your-ai.md](docs/connect-your-ai.md) hooks up the chat subscription you already pay for. No API keys, ever. Do this first; everything below assumes it's done.
 - [ ] **See your site.** Your AI (or whoever set this up for you) will give you two links: the **live site** and the **preview site**. Open both on your phone and save them.
 - [ ] **Gather your stuff.** [docs/gather-your-stuff.md](docs/gather-your-stuff.md) is the weekend homework: your photos, your story, your prices. They go in the shoebox (`content/brand/`), and your AI builds the site from them. Or skip the files and ask your AI to interview you in chat.
 - [ ] **Read the examples.** [docs/examples.md](docs/examples.md) shows five everyday updates: holiday hours, a new service, an announcement banner, a new photo, a new page, each as one message you'd send your AI. This is the "see, it's actually easy" proof.
 - [ ] **Try one tiny change.** Pick something harmless, like the announcement banner: "Add a banner: welcome to our new website!" Watch it appear on the preview site, then say "ship it."
 - [ ] **Set up your keys.** [docs/api-keys.md](docs/api-keys.md) walks you (and your AI) through the two free keys: one so the contact form emails you, one for visitor stats. Skip them and the site still works. It just does a little less.
 - [ ] **Learn the undo.** Read "Made a mistake?" below. It takes 30 seconds and you'll feel much braver afterwards.
+- [ ] **Know the no-install update path.** [docs/editing-in-browser.md](docs/editing-in-browser.md): fix a typo straight on GitHub.com. No AI, no terminal, no setup.
 - [ ] **Need a logo, a video, or online selling?** [docs/connectors.md](docs/connectors.md) shows how your AI can borrow other apps (Canva, Higgsfield, Shopify), with copy-paste requests.
 
 Then, when you're ready: [docs/setup-guide.md](docs/setup-guide.md) (your own domain name), [docs/owner-quickstart.md](docs/owner-quickstart.md) (getting good at directing your AI), [docs/faq.md](docs/faq.md).

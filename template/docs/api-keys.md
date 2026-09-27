@@ -2,6 +2,8 @@
 
 Your site needs up to **two keys** to unlock everything. Both are free. Without them, nothing breaks. The site just does a little less (this page tells you exactly what).
 
+**These keys are not for your AI.** Your AI assistant runs on the chat subscription you already pay for and never needs an API key. The two keys below are for outside services your *site* talks to (email delivery, visitor stats).
+
 **Do this with your AI.** You don't have to read this whole page and click around alone. Copy one of the prompts at the bottom into whatever chat AI you use (muse.ai, claude.ai, chatgpt.com, any of them), and it will walk you through each screen, click by click. That's what it's for.
 
 ## The one rule about keys

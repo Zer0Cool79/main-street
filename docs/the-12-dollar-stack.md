@@ -35,6 +35,7 @@ pie title Where the $12/year goes
 - **No credit card required** for Cloudflare Pages, Email Routing, Web Analytics, or Turnstile. Resend's free tier also starts without one.
 - **No usage meters to watch.** Nothing here bills by the visit. Your site can go viral on local news and the bill stays $0.
 - **The domain is the only recurring cost**, and you own it outright. If you ever leave this setup, the domain goes with you.
+- **Your AI chat subscription is not part of the $12.** Most owners already pay for one (Claude, ChatGPT, or similar). This system uses your subscription, never API keys, so there is no usage bill attached to the site.
 
 ## What could cost money (and doesn't have to)
 
