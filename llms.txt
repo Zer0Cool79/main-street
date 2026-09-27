@@ -34,4 +34,4 @@ Nothing goes live without the owner seeing and approving it first.
 - Static site built with Vite; plain HTML/CSS, no framework.
 - Deploys on Cloudflare Pages: `main` branch is production, `staging` branch is the preview site.
 - Contact form runs on a Cloudflare Pages Function with spam protection optional.
-- MIT licensed. Repository: https://github.com/Zer0Cool79/main-street
+- MIT licensed. Repository: https://github.com/davegelinas/main-street

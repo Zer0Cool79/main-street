@@ -4,7 +4,7 @@
 
 Please **do not** open a public issue for a security problem. Instead, use GitHub's private vulnerability reporting: open the **Security** tab of this repo and choose **Report a vulnerability**. Only the maintainer sees it.
 
-If you prefer email, you can reach the maintainer through their GitHub profile: https://github.com/Zer0Cool79
+If you prefer email, you can reach the maintainer through their GitHub profile: https://github.com/davegelinas
 
 Please include:
 

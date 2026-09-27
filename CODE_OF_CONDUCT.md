@@ -57,7 +57,7 @@ an individual is officially representing the community in public spaces.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders through the maintainer's GitHub profile:
-https://github.com/Zer0Cool79
+https://github.com/davegelinas
 
 All complaints will be reviewed and investigated promptly and fairly.
 
