@@ -2,6 +2,8 @@
 
 The complete walkthrough: from zero to a live website at your own domain. Budget about an hour, most of it waiting for DNS. If you get stuck at any step, describe where you are in plain words to your AI assistant; it can read this guide too.
 
+**No installs, no helper, nothing but a browser?** Skip this guide and follow [browser-only.md](browser-only.md) instead. It covers the same journey with every step written out for someone whose only tool is a ChatGPT or Claude browser tab.
+
 ## What you need
 
 - A GitHub account (free).
