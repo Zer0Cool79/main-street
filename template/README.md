@@ -42,6 +42,7 @@ More examples, including before-and-after walkthroughs: [docs/examples.md](docs/
 Do these in order. Each one is small; together they take an afternoon.
 
 - [ ] **See your site.** Your AI (or whoever set this up for you) will give you two links: the **live site** and the **preview site**. Open both on your phone and save them.
+- [ ] **Gather your stuff.** [docs/gather-your-stuff.md](docs/gather-your-stuff.md) is the weekend homework: your photos, your story, your prices. They go in the shoebox (`content/brand/`), and your AI builds the site from them. Or skip the files and ask your AI to interview you in chat.
 - [ ] **Read the examples.** [docs/examples.md](docs/examples.md) shows five everyday updates: holiday hours, a new service, an announcement banner, a new photo, a new page, each as one message you'd send your AI. This is the "see, it's actually easy" proof.
 - [ ] **Try one tiny change.** Pick something harmless, like the announcement banner: "Add a banner: welcome to our new website!" Watch it appear on the preview site, then say "ship it."
 - [ ] **Set up your keys.** [docs/api-keys.md](docs/api-keys.md) walks you (and your AI) through the two free keys: one so the contact form emails you, one for visitor stats. Skip them and the site still works. It just does a little less.

@@ -15,6 +15,7 @@ This file stays light on purpose. Detail loads on demand:
 | Talk to the owner about **any** task | `rules/beginner-mode.md` |
 | **Ship anything** (push, merge, or deploy) | `rules/deploy.md` |
 | Write or edit **any user-facing words** | `rules/content.md` |
+| Design the site from the owner's business, or do a **big rewrite** of its words | read `content/brand/brief.md` and list `content/brand/` first, then `rules/brand.md` |
 | Touch the **design, CSS, or layout** | `rules/design.md` |
 | Change **business facts** (hours, prices, services, address) | `rules/content.md` |
 | Add or replace an **image** | run `npm run optimize-images` after adding it |

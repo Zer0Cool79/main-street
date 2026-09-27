@@ -157,6 +157,7 @@ console.log("\nNext steps:");
 console.log("  For you:");
 console.log("    1. npm run dev      Preview your site at http://localhost:5173");
 console.log("    2. Ask your AI assistant to rewrite the homepage copy for your business");
+console.log("    3. Gather your stuff: photos, logo, and answers go in the shoebox at content/brand/ (see content/brand/README.md), or just ask your AI to interview you in chat. docs/gather-your-stuff.md is the weekend homework.");
 console.log("  For your helper (or your AI): follow docs/setup-guide.md:");
 console.log("    3. Put the site on GitHub and connect it to Cloudflare Pages (free)");
 console.log("    4. Connect your domain name and set up email\n");
