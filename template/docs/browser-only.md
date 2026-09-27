@@ -157,7 +157,7 @@ This connects your GitHub repository to the service that publishes your site.
 **Step 1: Start the connection.**
 
 1. Go to dash.cloudflare.com (signed in). Click **Workers & Pages** in the left menu.
-2. Click **Create**, then the **Pages** tab, then **Connect to Git**.
+2. Click **Create**, then choose the **Pages** option (the website option, not Worker). Then **Import an existing Git repository** → **Get started**, which takes you to **Connect to Git**.
 3. GitHub will ask to authorize Cloudflare. Choose your GitHub account. When it asks for repository access, pick **Only select repositories** and choose your site repository (not everything). Click **Save** or **Install**.
 4. Back in Cloudflare, select your site repository from the list and click **Begin setup**.
 
@@ -165,18 +165,20 @@ This connects your GitHub repository to the service that publishes your site.
 
 - **Project name:** your business name in lowercase with dashes (this becomes your first web address, like `maple-street-bakery.pages.dev`).
 - **Production branch:** `main`
-- **Framework preset:** Vite
+- **Framework preset:** leave at **None**. (There is no plain Vite option in the list; the similar-looking VitePress and React (Vite) are different things. Do not pick them.)
 - **Build command:** `npm run build`
 - **Build output directory:** `dist`
 - Leave everything else as is. Click **Save and Deploy**.
 
 **Step 3: Wait.** Cloudflare builds your site (one to three minutes). When you see a green checkmark, your site is live at the address shown, something like `https://maple-street-bakery.pages.dev`.
 
-**Step 4: Find your staging (preview) address.**
+**Step 4: Know where your staging (preview) address will appear.**
 
-1. In Cloudflare, click your project, then the **Deployments** tab.
-2. Find the row whose **Branch** column says `staging`. Click it.
-3. Its address looks like `https://staging.maple-street-bakery.pages.dev`. **Bookmark this.** This is your private preview link. Open it on your phone.
+1. In Cloudflare, click your project, then the **Deployments** tab. Right now there is only a `main` row. That is normal: Cloudflare builds a branch only after it changes, and your `staging` branch has not changed since before Cloudflare was connected.
+2. Your first commit to `staging` (Part 8, Steps 1-2) triggers its first preview build. After that, a row whose **Branch** column says `staging` appears here. Click it.
+3. Its address looks like `https://staging.maple-street-bakery.pages.dev`. **Bookmark this.** This is your preview link.
+
+A note on privacy: the preview link is not access-protected. Anyone who has the address can open it, but it is not linked from anywhere public. That is plenty for a pre-launch preview; just do not treat it as password-protected.
 
 ---
 
@@ -184,15 +186,13 @@ This connects your GitHub repository to the service that publishes your site.
 
 From here on, your job is the conversation: you talk, you look at your phone, you say "ship it." Your AI handles the mechanics. On a pure browser chat it cannot click for you, so it gives you the exact clicks, a minute or two at a time.
 
-**Step 1: Look at your staging site on your phone.** Tap through every page: home, services, contact. Read every word out loud if you can; you will catch mistakes.
+**Step 1: Tell the AI what's wrong, in plain words.** Examples: "My phone number is wrong, it should be 555-0142." "I don't like the blue, make it green." "Add that we do emergency calls."
 
-**Step 2: Tell the AI what's wrong, in plain words.** Examples: "My phone number is wrong, it should be 555-0142." "I don't like the blue, make it green." "Add that we do emergency calls."
+**Step 2: Follow the AI's paste steps.** The AI will answer with exact steps: which file to open on github.com, what to find, and the complete replacement text. **Before you paste, check the branch dropdown says `staging`, not `main`.** Then commit.
 
-**Step 3: Follow the AI's paste steps.** The AI will answer with exact steps: which file to open on github.com, what to find, and the complete replacement text. **Before you paste, check the branch dropdown says `staging`, not `main`.** Then commit.
+**Step 3: Open your staging preview on your phone.** The very first time, this commit is what triggers the preview build, so give Cloudflare two or three minutes, then find it: Cloudflare → your project → **Deployments** → the row whose **Branch** says `staging` → open its address. Bookmark it. Tap through every page: home, services, contact. Read every word out loud if you can; you will catch mistakes.
 
-**Step 4: Check the staging link again.** Wait about a minute after committing, then reload. If it looks unchanged, open it in a private/incognito window (your browser may be showing the old cached copy).
-
-**Step 5: Repeat** until you love it. This loop is the whole job, now and forever.
+**Step 4: Repeat.** After each new commit to `staging`, wait a couple of minutes, then reload the staging link. If it looks unchanged, open it in a private/incognito window (your browser may be showing the old cached copy). Keep going until you love it. This loop is the whole job, now and forever.
 
 ---
 
