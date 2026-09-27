@@ -31,11 +31,15 @@ jobs:
         run: cd /tmp/site && npm run build
 
       - name: Audit
+        # python3 http.server returns true 404s like Cloudflare Pages does.
+        # (vite preview serves index.html for unknown routes, so the 404
+        # check would fail against it. The audit is meant for deployed URLs.)
         run: |
-          cd /tmp/site
-          (npx vite preview --port 4173 >/tmp/preview.log 2>&1 &)
+          cd /tmp/site/dist
+          (python3 -m http.server 4173 >/tmp/preview.log 2>&1 &)
           for i in $(seq 1 30); do
             curl -sf http://localhost:4173/ >/dev/null && break
             sleep 1
           done
+          cd /tmp/site
           node scripts/audit-site.mjs http://localhost:4173
