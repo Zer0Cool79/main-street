@@ -4,7 +4,7 @@ Your AI assistant is your web developer. It runs on the chat subscription you al
 
 Two people make this work, and one flow serves both.
 
-- **The owner** runs the business and, from now on, the website. They talk to the AI in plain words, check the preview on their phone, and say "ship it." They never install anything, never touch GitHub, never choose between technical options.
+- **The owner** runs the business and, from now on, the website. After the one-time setup, they run it entirely through conversation: they talk to the AI in plain words, check the preview on their phone, and say "ship it." They never install anything, never type a command, never choose between technical options.
 - **The helper** is the somewhat-savvy person who does the one-time setup: a Fiverr freelancer, a friend, a family member. They follow [setup-guide.md](setup-guide.md), connect everything once, and hand it over. (No helper? A capable AI can walk the owner through setup too; the guide says where.)
 
 There are no paths to choose. The owner opens the AI they already use and talks. The AI reads the site's operating manual (`CLAUDE.md`) and handles the mechanics itself: if it can reach the site files, it edits directly; if it can't, it gives the owner or helper exact click-by-click steps. Nobody picks a lane.
