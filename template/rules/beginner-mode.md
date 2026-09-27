@@ -1,4 +1,4 @@
-# Beginner mode — how you talk to the owner
+# Beginner mode: how you talk to the owner
 
 The owner may never have used git, a terminal, GitHub, or DNS. They are smart about their business and new to this. Your communication adapts to that. This file overrides your default habits.
 

@@ -1,12 +1,18 @@
-# Owner quickstart — working with your AI web developer
+# Owner quickstart: working with your AI web developer
 
 Your repo contains its own operating manual (`CLAUDE.md` + `rules/`). Your AI assistant reads it automatically and acts as your web developer, whichever chat you use: muse.ai, claude.ai, chatgpt.com, or others. This guide is about *you*: how to ask, what to expect, and the rhythm of getting things done.
 
+**Watch first** (36 seconds, no sound needed): the whole journey, step by step.
+
+<video controls poster="assets/journey-poster.png" width="1280" src="assets/journey.mp4"></video>
+
+[Watch the walkthrough video](assets/journey.mp4) (MP4, 36 seconds)
+
 ## Getting started
 
-Open your AI chat and point it at your repo. That's the whole setup. (`AGENTS.md` gives non-Claude assistants the same instructions as `CLAUDE.md`.)
+Your AI needs to see your website's files before it can help. The person who set up your site (Marcus, an agency, whoever) connects your AI chat to your site's files. Every AI does this a little differently (a GitHub connection, uploading files, or a small app on your computer). Ask them: "connect my AI to my website repo."
 
-You don't need to explain the project. Say "read CLAUDE.md" if it ever seems lost.
+Once it's connected, open your AI chat and say: **"read CLAUDE.md in my website repo."** That's the whole setup. (If it ever seems lost later, say "read CLAUDE.md" again, that file is its operating manual.)
 
 ## The rhythm: change → staging → approve → live
 
@@ -15,7 +21,7 @@ Every task follows the same beat. Your site has two copies: a **staging site** (
 1. **You ask**, in plain English.
 2. **It puts** the change on your staging site and sends you the link.
 3. **You look** at the staging site on your phone. This is your approval step. There is no approve button; your words are the button ("looks good, ship it").
-4. **It publishes.** Your staging copy is merged to `main`, Cloudflare deploys in about a minute.
+4. **It publishes.** Your approved preview copy becomes the live site (your AI "merges staging to main"; Cloudflare publishes it in about a minute).
 5. **It tells you** what changed and reminds you how to undo it.
 
 If any step is skipped, ask for it: "send me the staging link first."
@@ -39,10 +45,10 @@ If any step is skipped, ask for it: "send me the staging link first."
 **Questions:**
 - "What would you change about the homepage?"
 - "Why is the contact form not sending me emails?"
-- "Run the site audit and explain the results in plain English."
+- "Ask it to run the site audit and explain the results in plain English."
 
 **Undo:**
-- "Roll back the last change." (Or do it yourself: Cloudflare → Pages → Deployments → ⋯ → Rollback.)
+- "Roll back the last change." (Or do it yourself: Cloudflare dashboard → Workers & Pages → your site → Deployments → find the last good one → **Rollback**.)
 
 ## What good looks like
 
@@ -66,4 +72,4 @@ If your assistant isn't doing these things, say so: "Explain it like I'm new to 
 
 1. Tell the assistant what you see, in plain words. ("The phone number on the homepage is wrong.")
 2. Ask: "What changed recently, and how do we undo it?"
-3. If it's urgent and the assistant is stuck: Cloudflare → Pages → Deployments → roll back to yesterday. Then investigate calmly.
+3. If it's urgent and the assistant is stuck: Cloudflare dashboard → Workers & Pages → your site → Deployments → roll back to yesterday. Then investigate calmly.

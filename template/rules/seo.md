@@ -1,4 +1,4 @@
-# SEO rules — be findable locally
+# SEO rules: be findable locally
 
 Small businesses live on local search. Most of this is already built into the template; your job is to not break it and to complete the human parts.
 
@@ -8,7 +8,7 @@ Small businesses live on local search. Most of this is already built into the te
 - **sitemap.xml** generated at build from the page list. **New pages must be added to the sitemap** or they're invisible to search. Check how the plugin builds the page list before adding a page.
 - **robots.txt** allows crawling and points at the sitemap.
 - **Semantic HTML, real copy in HTML** (not JS-rendered), descriptive `<title>` and meta descriptions per page, canonical URLs, OG tags.
-- **llms.txt** in `public/` — a short plain-text description of the business for AI crawlers.
+- **llms.txt** in `public/`: a short plain-text description of the business for AI crawlers.
 
 ## Your jobs
 

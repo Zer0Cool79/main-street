@@ -1,4 +1,4 @@
-# Supabase rules (optional — most sites don't need this)
+# Supabase rules (optional; most sites don't need this)
 
 Most Main Street sites never need a database. The contact form sends email; content lives in the repo. Only reach for Supabase when the site must **remember** something: newsletter subscribers with consent records, form submissions worth keeping, user accounts, bookings.
 

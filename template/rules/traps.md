@@ -1,4 +1,4 @@
-# Traps — things that have bitten before
+# Traps: things that have bitten before
 
 Read this before debugging anything weird. Each entry cost someone real time.
 

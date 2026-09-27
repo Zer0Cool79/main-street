@@ -41,12 +41,12 @@ Open the address it prints. That's your site.
 
 You want Cloudflare holding your DNS. That's what gives your staging site a clean address (`staging.yourdomain.com`) instead of an ugly `*.pages.dev` URL, and it makes the domain wiring automatic later.
 
-**Buying new?** Buy it at [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/): wholesale cost, no markup (~$10/year for `.com`), and DNS is already on Cloudflare. Done — skip to Step 4.
+**Buying new?** Buy it at [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/): wholesale cost, no markup (~$10/year for `.com`), and DNS is already on Cloudflare. Done. Skip to Step 4.
 
 **Already own one elsewhere?** Move its DNS to Cloudflare (free, your registrar stays as-is):
 
 1. In Cloudflare: **Add domain**, enter it, continue. Cloudflare shows you two nameservers.
-2. **Read the email warning first:** changing nameservers moves *every* DNS record. Copy your existing records (especially MX/email records) before switching — see [domains-and-dns.md](domains-and-dns.md), which your AI assistant can walk through with you.
+2. **Read the email warning first:** changing nameservers moves *every* DNS record. Copy your existing records (especially MX/email records) before switching. See [domains-and-dns.md](domains-and-dns.md), which your AI assistant can walk through with you.
 3. At your registrar, replace the domain's nameservers with Cloudflare's two.
 4. Back in Cloudflare, **Check nameservers**. Status flips to **Active** in minutes to a few hours. Go get coffee; don't keep poking it.
 
@@ -54,6 +54,8 @@ You want Cloudflare holding your DNS. That's what gives your staging site a clea
 
 1. In Cloudflare: **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
 2. Authorize GitHub if asked, and pick your repo.
+
+   > **Repo not showing up?** ("No repositories matching") The Cloudflare Pages GitHub App is usually only allowed to see *some* of your repos. Fix it on GitHub: click your avatar → **Settings** → **Applications** → **Installed GitHub Apps** → **Cloudflare Pages** → **Configure** → under *Repository access*, choose **All repositories** (or pick your site's repo) → **Save**. Back in Cloudflare, refresh the repo list. It'll appear. (Make sure it's the **Cloudflare Pages** app, not Cloudflare Workers, they're separate.)
 3. Build settings:
    - Production branch: `main`
    - Build command: `npm run build`
@@ -66,7 +68,7 @@ From now on, **every push to `main` rebuilds and redeploys production automatica
 ## Step 5: Your live domain (5 minutes + waiting)
 
 1. In Pages → your site → **Custom domains** → **Set up a custom domain**.
-2. Enter your domain (e.g. `acmeplumbing.com`). Cloudflare adds the DNS record and provisions SSL automatically — no records to type.
+2. Enter your domain (e.g. `acmeplumbing.com`). Cloudflare adds the DNS record and provisions SSL automatically. No records to type.
 3. Add the `www` version too if you want it (same screen).
 4. Wait for DNS to propagate (minutes to hours). Then open your domain: that's your live site.
 
@@ -74,13 +76,13 @@ From now on, **every push to `main` rebuilds and redeploys production automatica
 
 This is the preview copy where every change lands first. One permanent address, pretty enough to bookmark on your phone.
 
-1. **Turn on staging builds.** Pages → your site → **Settings** → **Builds & deployments** → **Branch deploy controls**: enable preview deployments and make sure the `staging` branch is included.
-2. **Push the `staging` branch once.** If it doesn't exist yet: create it from `main` and push. Cloudflare builds it. (The staging address can't attach until this first build succeeds — that's a Cloudflare rule, not us.)
-3. **Attach the subdomain.** **Custom domains** → **Set up a custom domain** → enter `staging.yourdomain.com` → assign it to the **`staging`** branch → **Activate**. Cloudflare creates the DNS record automatically.
-4. **Leave the record proxied** (orange cloud). A gray-cloud record can silently serve the live site on the staging address.
+1. **Turn on staging builds.** Pages → your site → **Settings** → **Builds & deployments** → **Branch deploy controls**: choose **All non-production branches** (or otherwise make sure `staging` is included).
+2. **Push the `staging` branch once.** If it doesn't exist yet: create it from `main` and push. Cloudflare builds it. The first build must succeed before the next step works. Your staging branch already has an address: `staging.<project>.pages.dev` (open it to confirm the build worked).
+3. **Attach the subdomain.** **Custom domains** → **Set up a custom domain** → enter `staging.yourdomain.com` → **Continue** → **Activate domain**. Cloudflare creates the DNS record automatically.
+4. **Point it at the staging branch.** Go to your domain's **DNS** settings, find the `CNAME` record named `staging`, and change its target from `<project>.pages.dev` to `staging.<project>.pages.dev` (your branch's address from step 2). **Leave it proxied** (orange cloud on). An unproxied (gray-cloud) record silently serves the *live* site on the staging address.
 5. Open `staging.yourdomain.com`. That's your staging site, forever at that address.
 
-Staging is automatically hidden from Google (it sends `X-Robots-Tag: noindex`), so customers never stumble onto the preview copy. Don't "fix" that — it's on purpose.
+Staging is automatically hidden from Google (it sends `X-Robots-Tag: noindex`), so customers never stumble onto the preview copy. Don't "fix" that, it's on purpose.
 
 **No custom domain?** Everything still works: staging lives at `staging.<project>.pages.dev`. The pretty subdomain just needs DNS on Cloudflare.
 
@@ -107,7 +109,7 @@ Until the key exists, the contact form hides itself and shows your email address
 
 ## Step 8: Analytics (5 minutes, optional)
 
-Cloudflare → your site → **Analytics** → **Web Analytics** → add your site. Copy the beacon token into a Cloudflare Pages environment variable named `CF_ANALYTICS_TOKEN` (Pages → your project → Settings → Environment variables → Production), then redeploy. The token is read at build time and never goes in the repo. The snippet only renders when the token is present. No cookies, no consent banner. Full owner walkthrough: [api-keys.md](api-keys.md).
+Cloudflare dashboard sidebar → **Analytics & Logs** → **Web Analytics** → **Add a site**, type your domain. Cloudflare shows a code snippet. Copy just the `"token": "..."` value (about 32 characters; choose the JS-snippet option if asked). Then: Pages → your project → **Settings** → **Environment variables** → Production → add `CF_ANALYTICS_TOKEN` with the token, **Save**, and redeploy (Deployments → ⋯ → Retry deployment). The token is read at build time and never goes in the repo. The snippet only renders when the token is present. No cookies, no consent banner. Full owner walkthrough: [api-keys.md](api-keys.md).
 
 ## Step 9: Meet your AI web developer
 

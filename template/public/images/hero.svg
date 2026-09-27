@@ -13,5 +13,5 @@
     <path d="M528 462l44-40 34 30 30-26 36 36"/>
   </g>
   <text x="600" y="560" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="600" fill="#7d6b4d">Your photo here</text>
-  <text x="600" y="616" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="30" fill="#97835f">1200 × 900 — replace with a real photo of your business</text>
+  <text x="600" y="616" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="30" fill="#97835f">1200 × 900: replace with a real photo of your business</text>
 </svg>

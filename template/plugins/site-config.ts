@@ -17,7 +17,7 @@ function loadConfig(root: string): Config {
   } catch {
     throw new Error(
       "site.config.json is missing from the site folder. " +
-      "If it was deleted by accident, ask your AI assistant to restore it — " +
+      "If it was deleted by accident, ask your AI assistant to restore it. " +
       "the last working version is saved in git."
     );
   }
@@ -25,7 +25,7 @@ function loadConfig(root: string): Config {
     return JSON.parse(raw);
   } catch {
     throw new Error(
-      "site.config.json is not valid JSON — usually a stray comma or quote. " +
+      "site.config.json is not valid JSON: usually a stray comma or quote. " +
       "Open the file and fix the marked spot, or ask your AI assistant to repair it. " +
       "Nothing is lost: the last working version is saved in git."
     );
@@ -40,7 +40,7 @@ function esc(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-// "Monday – Friday" -> ["Monday",...]; "7:00 AM – 6:00 PM" -> "07:00-18:00"
+// "Monday to Friday" -> ["Monday",...]; "7:00 AM to 6:00 PM" -> "07:00-18:00"
 const DAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const DAY_CODE: Record<string, string> = { Monday: "Mo", Tuesday: "Tu", Wednesday: "We", Thursday: "Th", Friday: "Fr", Saturday: "Sa", Sunday: "Su" };
 

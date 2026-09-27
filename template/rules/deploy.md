@@ -1,19 +1,19 @@
-# Deploy rules — shipping a change
+# Deploy rules: shipping a change
 
 Two branches, two sites. Simple on purpose:
 
-- **`staging` branch → staging site** at `staging.<their-domain>`. Every change lands here first. The owner bookmarks one link and always knows where to look. (If their DNS isn't on Cloudflare yet, it's `staging.<project>.pages.dev` — same idea, uglier address.)
+- **`staging` branch → staging site** at `staging.<their-domain>`. Every change lands here first. The owner bookmarks one link and always knows where to look. (If their DNS isn't on Cloudflare yet, it's `staging.<project>.pages.dev`, same idea, uglier address.)
 - **`main` branch → production** at their domain. Only ever updated by merging `staging` after the owner approves what they saw on staging.
 
 Pushing to `staging` rebuilds the staging site. Merging `staging` into `main` rebuilds production. **The push is the release.** There is no other environment.
 
 ## First-time staging setup (once per site)
 
-The staging subdomain needs three things, in order — see `docs/setup-guide.md` Step 6 for the click path:
+The staging subdomain needs three things, in order (see `docs/setup-guide.md` Step 6 for the click path):
 
 1. The `staging` branch exists and has been pushed (Cloudflare must build it once before the address can attach).
 2. Branch deploy controls include `staging` (Pages → Settings → Builds & deployments).
-3. `staging.<their-domain>` added as a custom domain assigned to the `staging` branch. Cloudflare creates the DNS record; it must stay **proxied** (orange cloud) — a gray-cloud record can silently serve production on the staging address.
+3. `staging.<their-domain>` added as a custom domain assigned to the `staging` branch. Cloudflare creates the DNS record; it must stay **proxied** (orange cloud); a gray-cloud record can silently serve production on the staging address.
 
 ## Staging is hidden from Google on purpose
 

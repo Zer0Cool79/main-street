@@ -1,4 +1,4 @@
-# Content rules — words on the site
+# Content rules: words on the site
 
 ## Business facts
 

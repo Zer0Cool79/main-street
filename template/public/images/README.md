@@ -1,6 +1,6 @@
 # Site photos go here
 
-The starter images (`hero.svg`, `gallery-1.svg`, …) are placeholders. Replace them with real photos of your business as JPG, PNG, or WebP files — just keep the same filenames, or update the `src` paths in `index.html` to match.
+The starter images (`hero.svg`, `gallery-1.svg`, …) are placeholders. Replace them with real photos of your business as JPG, PNG, or WebP files. Just keep the same filenames, or update the `src` paths in `index.html` to match.
 
 Guidelines that keep the site fast:
 

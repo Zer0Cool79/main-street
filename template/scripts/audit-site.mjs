@@ -97,23 +97,23 @@ await check("homepage has og:title", async () => {
 
 // Informational only: these never fail the audit. They tell the owner what
 // the live site can and cannot do yet, based on what is actually served.
-console.log("\nIntegrations (info only — see docs/api-keys.md):");
+console.log("\nIntegrations (info only, see docs/api-keys.md):");
 try {
   const { text } = await get("/");
   if (/id="contact-form"/.test(text)) {
-    console.log("  INFO  contact form is on this page — messages are delivered only if RESEND_API_KEY and CONTACT_TO_EMAIL are set in Cloudflare; without them visitors see your email address instead. The page never breaks.");
+    console.log("  INFO  contact form is on this page: messages are delivered only if RESEND_API_KEY and CONTACT_TO_EMAIL are set in Cloudflare; without them visitors see your email address instead. The page never breaks.");
   } else {
     console.log("  INFO  no contact form on this page (feature off).");
   }
   if (/cloudflareinsights\.com\/beacon/.test(text)) {
-    console.log("  INFO  analytics beacon present — visitor stats are collecting.");
+    console.log("  INFO  analytics beacon present, visitor stats are collecting.");
   } else {
-    console.log("  INFO  no analytics beacon — visitor stats off; the site works exactly the same.");
+    console.log("  INFO  no analytics beacon, visitor stats off; the site works exactly the same.");
   }
   const starters = ["Your photo here", "placeholder copy", "Example service", "lorem ipsum", "Your first real customer quote"];
   const found = starters.filter((s) => text.toLowerCase().includes(s.toLowerCase()));
   if (found.length) {
-    console.log(`  INFO  this page still shows starter placeholder text (${found.join("; ")}). Replace it before shipping — ask your AI to rewrite it for your business.`);
+    console.log(`  INFO  this page still shows starter placeholder text (${found.join("; ")}). Replace it before shipping. Ask your AI to rewrite it for your business.`);
   }
 } catch {
   console.log("  INFO  could not read the homepage for the integrations summary.");

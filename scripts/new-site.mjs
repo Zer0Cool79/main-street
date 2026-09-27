@@ -49,7 +49,7 @@ if (!targetArg) {
 }
 
 if (!existsSync(templateDir) || !statSync(templateDir).isDirectory()) {
-  fail(`the template folder is missing (${templateDir}). This toolkit copy looks damaged — re-download it.`);
+  fail(`the template folder is missing (${templateDir}). This toolkit copy looks damaged. Re-download it.`);
 }
 
 const targetDir = resolve(process.cwd(), targetArg);
@@ -103,19 +103,30 @@ if (!noGit) {
     execSync("git add -A", { cwd: targetDir, stdio: "ignore" });
     gitOk = true;
   } catch {
-    console.log("\nNote: could not initialize a git repo here — you can run `git init` in the folder later.");
+    console.log("\nNote: could not initialize a git repo here. You can run `git init` in the folder later.");
   }
 }
 
 console.log(`\nDone! Your new site is ready at ${targetDir}`);
 console.log(`  ${actual} files copied and verified.`);
-if (gitOk) console.log("  Git repository initialized with everything staged.");
+if (gitOk) {
+  console.log("  Git repository initialized with everything staged.");
+  // First commit needs a git identity; most new machines don't have one yet.
+  try {
+    execSync("git config user.name", { cwd: targetDir, stdio: "ignore" });
+  } catch {
+    console.log("\n  One-time git setup (so you can save versions of your site):");
+    console.log('    git config user.name "Your Name"');
+    console.log('    git config user.email "you@example.com"');
+    console.log("  Then: git commit -m \"First version of my site\"");
+  }
+}
 console.log("\nNext steps (each takes a few minutes):");
 console.log("  1. cd " + targetArg);
-console.log("  2. npm install        (downloads the build tools — one time only)");
+console.log("  2. npm install        (downloads the build tools, one time only)");
 console.log("  3. npm run setup      (the friendly wizard: your business details)");
 console.log("  4. npm run dev        (see your site at http://localhost:5173)");
-console.log("\nWhen it looks right, follow template docs in this order:");
+console.log("\nWhen it looks right, follow the docs inside your new site, in this order:");
 console.log("  docs/setup-guide.md   (GitHub + Cloudflare Pages + your domain)");
 console.log("  docs/api-keys.md      (contact form email + visitor stats)");
 console.log("\nThe golden rule: every change goes to the staging site first,");

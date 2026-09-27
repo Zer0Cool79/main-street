@@ -1,4 +1,4 @@
-# Core rules — voice and quality bar
+# Core rules: voice and quality bar
 
 These apply to everything: copy, design, code, and how you talk to the owner.
 

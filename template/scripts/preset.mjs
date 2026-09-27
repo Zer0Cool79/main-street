@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Apply a business-type preset: flips feature flags in site.config.json.
-// Usage: node scripts/preset.mjs <bakery|restaurant|home-services|salon-wellness|professional>
+// Usage: node scripts/preset.mjs <bakery|restaurant|home-services|retail|salon-wellness|professional>
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -28,6 +28,13 @@ export const PRESETS = {
     features: {
       faq: true, testimonials: true, contactForm: true,
       announcementBanner: true, analytics: true, menu: false, gallery: false, blog: false, booking: false, emailSignup: false,
+    },
+  },
+  retail: {
+    type: "Store",
+    features: {
+      gallery: true, testimonials: true, contactForm: true,
+      announcementBanner: true, faq: true, analytics: true, menu: false, blog: false, booking: false, emailSignup: false,
     },
   },
   "salon-wellness": {

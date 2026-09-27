@@ -1,10 +1,10 @@
 # START HERE
 
-Welcome. This checklist takes you from "I have the toolkit" to a live small-business website. No experience assumed — if a step confuses you, open your AI chat (muse.ai, claude.ai, chatgpt.com, or whichever you use) and say "walk me through this step."
+Welcome. This checklist takes you from "I have the toolkit" to a live small-business website. No experience assumed. If a step confuses you, open your AI chat (muse.ai, claude.ai, chatgpt.com, or whichever you use) and say "walk me through this step."
 
 ## 0. Understand what this is
 
-This toolkit is the **generator**. It holds a pristine site template and a scaffolder script. You use it to create one **customer site** — a separate folder (and later its own GitHub repo) that belongs to the business. The business owner lives in their site with their AI assistant; they never see this toolkit.
+This toolkit is the **generator**. It holds a pristine site template and a scaffolder script. You use it to create one **customer site**: a separate folder (and later its own GitHub repo) that belongs to the business. The business owner lives in their site with their AI assistant; they never see this toolkit.
 
 ## 1. Create the site (2 minutes)
 
@@ -24,7 +24,7 @@ npm install
 npm run setup
 ```
 
-`npm install` downloads the build tools (one time). `npm run setup` asks plain-language questions — business name, phone, email, address, domain, what kind of business — and configures everything. At the end it prints the status of the two free integrations (contact-form email, visitor stats) and points to the setup guide.
+`npm install` downloads the build tools (one time). `npm run setup` asks plain-language questions: business name, phone, email, address, domain, what kind of business, then configures everything. At the end it prints the status of the two free integrations (contact-form email, visitor stats) and points to the setup guide.
 
 ## 3. See the site (1 minute)
 
@@ -45,7 +45,7 @@ Full walkthrough inside the site: `docs/setup-guide.md`. The short version:
 
 ## 5. Hand it over
 
-Point the owner at their site's **README.md** and **[docs/examples.md](template/docs/examples.md)** — the "see, it's actually easy" proof. Their whole job from now on: tell their AI what they want, look at the preview link on their phone, say "ship it."
+Point the owner at their site's **README.md** and **[docs/examples.md](template/docs/examples.md)**: the "see, it's actually easy" proof. Their whole job from now on: tell their AI what they want, look at the preview link on their phone, say "ship it."
 
 ## If something looks wrong
 

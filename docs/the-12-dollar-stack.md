@@ -1,4 +1,4 @@
-# The $12/year stack — the honest bill
+# The $12/year stack: the honest bill
 
 Every service this template uses, what it costs, and where the free tier ends. No surprises is the point.
 

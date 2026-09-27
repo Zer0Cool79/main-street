@@ -1,4 +1,4 @@
-# Safety rules — the non-negotiables
+# Safety rules: the non-negotiables
 
 Violate these and you've failed the task, no matter how good the change looks.
 

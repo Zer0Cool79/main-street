@@ -1,4 +1,4 @@
-# Main Street site — project notes
+# Main Street site: project notes
 
 The live website for **{{business.name}}** (see `site.config.json` for the real name, contact details, hours, and feature flags).
 
@@ -6,14 +6,14 @@ The live website for **{{business.name}}** (see `site.config.json` for the real 
 
 Read [rules/beginner-mode.md](rules/beginner-mode.md) before your first real task. It governs how you communicate here, and it overrides your default habits.
 
-## Triggers — read the file before doing the thing
+## Triggers: read the file before doing the thing
 
 This file stays light on purpose. Detail loads on demand:
 
 | If you are about to… | Read first |
 |---|---|
 | Talk to the owner about **any** task | `rules/beginner-mode.md` |
-| **Ship anything** — push, merge, or deploy | `rules/deploy.md` |
+| **Ship anything** (push, merge, or deploy) | `rules/deploy.md` |
 | Write or edit **any user-facing words** | `rules/content.md` |
 | Touch the **design, CSS, or layout** | `rules/design.md` |
 | Change **business facts** (hours, prices, services, address) | `rules/content.md` |
@@ -66,10 +66,10 @@ npm run setup            # interactive wizard: business details + preset
 npm run preset <name>    # apply a business-type feature bundle
 npm run optimize-images  # after adding ANY image to public/images/
 npm run audit <url>      # post-deploy health check against the live site
-git push origin main     # deploys — only after the owner approves the preview
+git push origin main     # deploys, only after the owner approves the preview
 ```
 
-## Verification — run before claiming anything works
+## Verification: run before claiming anything works
 
 1. `npm run build` passes with no errors.
 2. Open the changed pages in `npm run dev` (or the preview URL) and actually look at them on a phone-sized viewport.

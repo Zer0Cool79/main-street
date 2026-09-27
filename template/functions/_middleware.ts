@@ -6,7 +6,7 @@
 //
 // Hostname heuristic on purpose: zero configuration, correct from the first
 // deploy, no env var to forget. The only hostname this misclassifies is a
-// production domain literally starting with "staging." — don't do that.
+// production domain literally starting with "staging.". Don't do that.
 
 export function shouldNoindex(hostname: string): boolean {
   const host = hostname.toLowerCase();
