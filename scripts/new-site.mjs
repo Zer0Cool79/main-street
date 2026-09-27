@@ -8,7 +8,7 @@
 // the person running this may be an agency dev or a curious owner.
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
 import { execSync } from "node:child_process";
-import { resolve, dirname, basename } from "node:path";
+import { resolve, dirname, basename, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const toolkitRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -44,6 +44,8 @@ const noGit = args.includes("--no-git");
 if (!targetArg) {
   console.log("Usage: node scripts/new-site.mjs <target-dir> [--force] [--no-git]");
   console.log("\nCopies the pristine site template into <target-dir> and sets it up as a new project.");
+  console.log("Your site lives NEXT TO the toolkit, not inside it. Example:");
+  console.log("  node scripts/new-site.mjs ../acme-plumbing");
   console.log("Refuses to overwrite a non-empty directory unless you pass --force.");
   process.exit(0);
 }
@@ -53,6 +55,12 @@ if (!existsSync(templateDir) || !statSync(templateDir).isDirectory()) {
 }
 
 const targetDir = resolve(process.cwd(), targetArg);
+
+// The site must live next to the toolkit, never inside it. Nesting it here
+// would mix the customer site into the toolkit repo and break the two-repo model.
+if (targetDir === toolkitRoot || targetDir.startsWith(toolkitRoot + sep)) {
+  fail(`"${targetArg}" is inside the toolkit folder. Your site needs its own folder next to the toolkit, not inside it, so it can become its own GitHub repo later and the toolkit stays pristine for the next site. Run this instead: node scripts/new-site.mjs ../${basename(targetDir)}`);
+}
 
 if (existsSync(targetDir) && !isEmptyDir(targetDir) && !force) {
   fail(`"${targetArg}" already exists and is not empty. Pick an empty folder, or re-run with --force to overwrite it.`);
