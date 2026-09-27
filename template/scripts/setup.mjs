@@ -70,7 +70,8 @@ s.domain = cleanDomain(rawDomain);
 if (s.domain === "example.com") {
   console.log("  (Keeping the placeholder example.com, your AI will help you get a real domain later.)");
 }
-s.description = `${b.name}: ${b.tagline}. Located at ${addr.street}, ${addr.city}, ${addr.state}.`;
+const taglineClean = b.tagline.trim().replace(/[.!\u2026]+$/, "");
+s.description = `${b.name}: ${taglineClean}. Located at ${addr.street}, ${addr.city}, ${addr.state}.`;
 config.business = b;
 config.site = s;
 
@@ -157,6 +158,7 @@ console.log("\nNext steps:");
 console.log("  For you:");
 console.log("    1. npm run dev      Preview your site at http://localhost:5173");
 console.log("    2. Ask your AI assistant to rewrite the homepage copy for your business");
+console.log("       (also give it your real opening hours: the Mon-Fri 9-5 default is a placeholder)");
 console.log("    3. Gather your stuff: photos, logo, and answers go in the shoebox at content/brand/ (see content/brand/README.md). Have a current site? Give your AI its domain and it will harvest the shoebox for you. Or just ask your AI to interview you in chat. docs/gather-your-stuff.md is the weekend homework.");
 console.log("  For your helper (or your AI): follow docs/setup-guide.md:");
 console.log("    3. Put the site on GitHub and connect it to Cloudflare Pages (free)");
