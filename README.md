@@ -1,11 +1,51 @@
 # Main Street (working name)
 
-**The $12/year website stack.** A toolkit for giving small businesses a fast, professional website they can update themselves with AI, for the price of a domain name.
+**A professional website for your small business for about $12 a year.** No page builder. No monthly fees. No developer on retainer. You update it by talking: tell your AI assistant what you want in plain English, look at the preview on your phone, and say "ship it."
+
+**Watch how it works** (36 seconds, no sound needed):
+
+<video controls poster="template/docs/assets/journey-poster.png" width="1280" src="template/docs/assets/journey.mp4"></video>
+
+[Watch the walkthrough video](template/docs/assets/journey.mp4) (MP4, 36 seconds)
+
+## Is this for you?
+
+- You own a small business and want a website that looks professional.
+- You don't want to learn a page builder or pay a monthly fee.
+- You're comfortable chatting with an AI assistant (or you know someone who is).
+
+If that's you, keep reading. You need about an afternoon and a domain name (about $12 a year). That's the whole budget.
+
+## How it works (the 30-second version)
+
+1. **You say what you want**, in plain words: "Change our Saturday hours to 9 to 2." You say it to whatever AI chat you already use.
+2. **You get a preview link.** Open it on your phone. It looks exactly like your site with the change applied.
+3. **You say "ship it."** Your live site updates in about a minute.
+
+That's the whole system. The preview step is what keeps your live site safe: nothing goes public until you've seen it and approved it. Made a mistake? One click rolls it back (your AI can show you where).
+
+## What it costs, honestly
+
+About $12 a year for the domain name. Everything else runs on free tiers. The full breakdown, including free-tier limits and what could optionally cost money: [docs/the-12-dollar-stack.md](docs/the-12-dollar-stack.md).
+
+## You don't need to be technical
+
+- No code. No terminal. No jargon you have to learn.
+- Your AI assistant is your web developer. It handles the technical parts; you make the decisions.
+- The one thing worth knowing: your secret keys (for the contact form) live in the Cloudflare dashboard, never in your website files. Your AI walks you through it: [template/docs/api-keys.md](template/docs/api-keys.md).
+
+See how easy everyday updates are, each shown as one message you'd send: [template/docs/examples.md](template/docs/examples.md).
+
+---
+
+## Setting up a site (for the person doing the technical setup)
+
+> Everything below is for whoever sets sites up: an agency, a freelancer, or the tech-savvy friend. Business owners can stop here; your site's own README (inside your site's repo) is written for you.
 
 Two repositories, two audiences:
 
-- **This repo (the toolkit)**: the generator. The pristine site template, the scaffolder, the AI knowledge base (rules, features, presets), and the guides. For the person setting sites up (an agency, a freelancer, a tech-savvy friend).
-- **Each customer site repo**: a scaffolded copy of `template/`, owned by the business: this is where the owner lives with their AI assistant. They never see this toolkit.
+- **This repo (the toolkit)**: the generator. The pristine site template, the scaffolder, the AI knowledge base (rules, features, presets), and the guides.
+- **Each customer site repo**: a scaffolded copy of `template/`, owned by the business. This is where the owner lives with their AI assistant. They never need to see this toolkit.
 
 ```mermaid
 flowchart TD
@@ -17,7 +57,7 @@ flowchart TD
     STG -.->|owner says ship it<br/>merge to main| MAIN
 ```
 
-## Scaffold a new site
+### Scaffold a new site
 
 ```bash
 node scripts/new-site.mjs ../acme-plumbing
@@ -30,14 +70,16 @@ npm run setup
 
 Then follow the customer-facing guides inside the new site: `docs/setup-guide.md` (GitHub → Cloudflare Pages → domain), `docs/api-keys.md` (contact form email + visitor stats).
 
-## The model every site follows
+> **Heads-up from real experience:** when you connect the repo in Cloudflare Pages, the Cloudflare Pages GitHub App may only have access to some of your repos, and the repo picker will say "No repositories matching." Fix: on GitHub, go to Settings → Applications → Cloudflare Pages → Configure, and grant it access to the new repo (or all repositories). Then the repo appears in the picker.
+
+### The model every site follows
 
 - **`staging` branch → staging site.** Every change lands here first. The owner opens one stable URL on their phone and looks at it.
 - **Owner says "ship it" → merge `staging` into `main` → production.** `main` deploys to the live domain automatically.
 - **Deploys only from git.** No manual deploys, ever. They bypass the record and the next push silently reverts them.
 - **Missing key? The feature degrades, the page never breaks.** API keys live in Cloudflare (Pages → Settings → Environment variables), never in a repo.
 
-## What's in this repo
+### What's in this repo
 
 ```
 template/            The pristine generated site. Scaffold it, don't edit it in place.
@@ -51,24 +93,22 @@ template/            The pristine generated site. Scaffold it, don't edit it in 
   functions/         Cloudflare Pages Functions (contact form, staging noindex)
 scripts/
   new-site.mjs       The scaffolder: template/ → new customer repo
+  make-journey-video.py  Regenerates the 36-second walkthrough video (PIL + ffmpeg)
 docs/
   the-12-dollar-stack.md   The honest bill: what's free, what the domain costs
   domains-and-dns.md       DNS on Cloudflare, staging subdomains
   for-agencies.md          The per-client playbook
+  pressure-test.md         The adversarial review (see below)
 ```
 
 The knowledge base (`rules/`, `features/`, `presets/`) lives **only** in `template/`: every customer site carries its own copy, so each site is self-sufficient and its AI never needs this toolkit.
 
-## Improving the template
+### Improving the template
 
 1. Make the change in `template/` here.
 2. Validate it: scaffold a throwaway site with `new-site.mjs`, run `npm install`, `npm run setup`, `npm run build`, and the audit.
 3. Commit here. Existing customer sites pick up template improvements through their AI assistant (or a manual copy). There is deliberately no auto-update: the owner's live site never changes without them saying so.
 
-## Cost honesty
-
-~$12/year per site: the domain name. Everything else is free-tier. The full breakdown, including free-tier limits and what could optionally cost money: [docs/the-12-dollar-stack.md](docs/the-12-dollar-stack.md).
-
-## Pressure test
+### Pressure test
 
 [docs/pressure-test.md](docs/pressure-test.md) is the adversarial review: zero-skill walkthrough findings, hostile-input tests, broken-state recovery, the top-5 ways an owner gets stuck, cost honesty, the abandoned-for-a-year test, and a security once-over, with what was fixed and what wasn't.
