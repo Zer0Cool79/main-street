@@ -14,7 +14,7 @@ On your computer, in a terminal, from this toolkit folder:
 node scripts/new-site.mjs ../acme-plumbing
 ```
 
-(Replace `../acme-plumbing` with the business's folder name.) The script copies the template, names everything correctly, verifies the copy, and initializes git. It refuses to overwrite a non-empty folder without `--force`, and it never touches the network.
+(Replace `../acme-plumbing` with the business's folder name.) The `../` matters: your site lives **next to** the toolkit, not inside it. The toolkit stays pristine so you can make more sites later, and your site gets its own GitHub repo. The script copies the template, names everything correctly, verifies the copy, and initializes git. It refuses to overwrite a non-empty folder without `--force`, refuses to build inside the toolkit folder, and it never touches the network.
 
 ## 2. Make it theirs (10 minutes)
 

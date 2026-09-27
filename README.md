@@ -66,7 +66,7 @@ npm install
 npm run setup
 ```
 
-`new-site.mjs` copies `template/` into the target folder, names the package after the directory, verifies the copy, and initializes git. It refuses to overwrite a non-empty directory without `--force`, and it never touches the network.
+`new-site.mjs` copies `template/` into the target folder, names the package after the directory, verifies the copy, and initializes git. It refuses to overwrite a non-empty directory without `--force`, refuses to build inside the toolkit folder (your site lives **next to** the toolkit as `../acme-plumbing`, so it can become its own GitHub repo), and it never touches the network.
 
 Then follow the customer-facing guides inside the new site: `docs/setup-guide.md` (GitHub → Cloudflare Pages → domain), `docs/api-keys.md` (contact form email + visitor stats).
 
