@@ -6,6 +6,10 @@
 
 https://github.com/user-attachments/assets/752e5e89-482f-40f9-b1c0-d4fab41c60b9
 
+**Watch the full build** (70 seconds, no sound needed): one barbershop, idea to live site.
+
+https://github.com/user-attachments/assets/a0c8180d-cec6-4d3b-bd72-366a873c2776
+
 ## Is this for you?
 
 - You own a small business and want a website that looks professional.
