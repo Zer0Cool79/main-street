@@ -38,7 +38,7 @@ About $12 a year for the domain name. Everything else runs on free tiers, plus t
 - **The one-time setup takes an afternoon** (or hand it to someone technical): getting the site online. Your AI talks you through it, and it never needs API keys: [setup guide](template/docs/setup-guide.md), [connect your AI](template/docs/connect-your-ai.md).
 - The one thing worth knowing: your secret keys (for the contact form) live in the Cloudflare dashboard, never in your website files. Your AI walks you through it: [template/docs/api-keys.md](template/docs/api-keys.md).
 
-See how easy everyday updates are, each shown as one message you'd send: [template/docs/examples.md](template/docs/examples.md).
+See what a finished site looks like, what the setup really involves (real commands, real output), and how easy everyday updates are: [template/docs/examples.md](template/docs/examples.md).
 
 ---
 
