@@ -141,11 +141,22 @@ function hoursPlain(hours: Array<{ days: string; time: string }>): string {
   return hours.map((h) => `- ${h.days}: ${h.time}`).join("\n");
 }
 
+// The tagline is rendered with template-supplied punctuation (the footer and
+// hero add their own period), so strip trailing sentence punctuation here.
+// Owners and AIs can write it with or without the period; the output always
+// ends up with exactly one.
+function tagline(cfg: Config): string {
+  return String(cfg.business?.tagline ?? "")
+    .trim()
+    .replace(/[.!?\u2026]+$/, "");
+}
+
 function replaceTokensPlain(text: string, cfg: Config): string {
   return text.replace(/\{\{([a-zA-Z0-9_.]+)\}\}/g, (match, path) => {
     if (path === "year") return String(new Date().getFullYear());
     if (path === "business.hours") return hoursPlain(cfg.business?.hours ?? []);
     if (path === "jsonld" || path === "faqJsonld") return "";
+    if (path === "business.tagline") return tagline(cfg);
     const v = getPath(cfg, path);
     return v == null ? "" : String(v);
   });
@@ -158,6 +169,7 @@ function replaceTokens(html: string, cfg: Config): string {
     if (path === "analyticsToken") return String(process.env.CF_ANALYTICS_TOKEN ?? "").trim();
     if (path === "business.hours") return hoursHtml(cfg.business?.hours ?? []);
     if (path === "faqJsonld") return faqJsonLd(html);
+    if (path === "business.tagline") return esc(tagline(cfg));
     const v = getPath(cfg, path);
     return v == null ? "" : esc(String(v));
   });
