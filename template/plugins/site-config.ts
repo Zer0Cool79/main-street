@@ -109,15 +109,28 @@ function faqJsonLd(html: string): string {
 }
 
 function stripFeatures(html: string, cfg: Config): string {
-  return html.replace(/<!--\s*feature:([A-Za-z]+)\s*-->([\s\S]*?)<!--\s*\/feature:\1\s*-->/g, (match, name, body) => {
+  // The body pattern refuses to cross another feature opener, so innermost
+  // blocks are stripped first; loop until no blocks remain (handles nesting).
+  const re = /<!--\s*feature:([A-Za-z]+)\s*-->((?:(?!<!--\s*feature:)[\s\S])*?)<!--\s*\/feature:\1\s*-->/g;
+  const once = (text: string) => text.replace(re, (match, name, body) => {
     const on = Boolean(cfg.features?.[name]);
     if (name === "announcementBanner") return on && String(cfg.site?.announcement ?? "").trim() ? body : "";
+    // Booking: buttons only render when a real booking URL is configured.
+    // Never link a "book now" button to the contact form as a placeholder.
+    if (name === "booking") return on && String(cfg.integrations?.bookingUrl ?? "").trim() ? body : "";
     // Analytics: the beacon only renders when the token is provided at build
     // time via the CF_ANALYTICS_TOKEN environment variable. The token never
     // lives in site.config.json or any committed file.
     if (name === "analytics") return on && String(process.env.CF_ANALYTICS_TOKEN ?? "").trim() ? body : "";
     return on ? body : "";
   });
+  let prev = "";
+  let out = html;
+  while (out !== prev) {
+    prev = out;
+    out = once(out);
+  }
+  return out;
 }
 
 function hoursHtml(hours: Array<{ days: string; time: string }>): string {

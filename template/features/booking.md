@@ -4,7 +4,7 @@
 
 ## How to turn it on/off
 
-Flag: `booking` in `site.config.json`. Set `integrations.bookingUrl` to the booking page URL. Buttons render wherever the booking call-to-action belongs (header, hero, services).
+Flag: `booking` in `site.config.json`. Set `integrations.bookingUrl` to the booking page URL. Buttons render wherever the booking call-to-action belongs (header, hero, services). If `bookingUrl` is empty, the buttons are suppressed entirely rather than pointing at a placeholder: a dead-end booking button silently eats customers.
 
 ## Why link out instead of building it
 
