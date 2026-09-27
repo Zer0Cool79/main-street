@@ -20,11 +20,9 @@ Your site starts as a copy of the `template/` folder in the Main Street repo.
 
 ## Step 2: Make it yours (10 minutes)
 
-**If your AI has access to your site folder** ([Path A](connect-your-ai.md)): say "run the setup with me." It asks for your business details in plain language, right in chat, and writes them into `site.config.json`. Pick the preset closest to your kind of business, or skip it.
+**Owner:** say to your AI: "run the setup with me." It asks for your business details in plain language, right in chat, and fills in the site. (If your AI can't reach the files yet, your helper runs the wizard below while you answer the same questions out loud.)
 
-**If you're in a web chat** ([Path B](connect-your-ai.md)): say "interview me for the setup." It asks the same questions here in chat, then hands you the answers to type into the wizard below.
-
-**The hands-on way,** on your computer, from your site folder:
+**Helper (or hands-on),** on your computer, from your site folder:
 
 ```bash
 cd acme-plumbing

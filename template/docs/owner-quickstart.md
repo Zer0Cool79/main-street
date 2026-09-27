@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/752e5e89-482f-40f9-b1c0-d4fab41c60b9
 
 Two steps, then you're talking to your web developer.
 
-**1. Connect your AI to your site.** Follow [docs/connect-your-ai.md](connect-your-ai.md): either give your provider's coding app access to your site folder (recommended; it uses the subscription you already pay for, no API keys), or use plain web chat plus GitHub in your browser (nothing to install).
+**1. Open the AI you already pay for** (the Claude or ChatGPT app or website, or this chat) and follow [docs/connect-your-ai.md](connect-your-ai.md). It runs on the subscription you already have. No API keys, and nothing to install unless you want the full hands-free version.
 
 **2. Say: "read CLAUDE.md."** That's the whole setup. CLAUDE.md is the operating manual your site carries for your AI. (If it ever seems lost later, say "read CLAUDE.md" again.)
 

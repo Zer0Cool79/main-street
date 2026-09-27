@@ -79,7 +79,7 @@ The owner launches, then ignores the site for a year. What survives?
 
 - **Missing images pass the build silently**: the golden loop is the check: the owner sees the broken image on the staging preview before anything ships. A build-time image inventory would add machinery for a problem human eyes catch in seconds.
 - **`npm` errors without `node_modules` stay jargon-y**: the documented order (install before build) prevents it, and anyone running npm commands is already past the no-terminal owner path. Rewriting npm's errors isn't our job.
-- **No public GitHub template repo yet (pre-publication limitation, now resolved differently)**: the repo is public, and the intended owner path is chat-first via [connect-your-ai.md](../template/docs/connect-your-ai.md): the AI scaffolds the site folder with the owner, then [setup-guide.md](../template/docs/setup-guide.md) walks through GitHub and Cloudflare. Initial scaffolding still goes smoothest with someone terminal-comfortable (or the owner's AI on Path A), which is stated up front instead of pretending it's zero-touch.
+- **No public GitHub template repo yet (pre-publication limitation, now resolved differently)**: the repo is public, and the intended owner path is chat-first via [connect-your-ai.md](../template/docs/connect-your-ai.md): the AI scaffolds the site folder with the owner, then [setup-guide.md](../template/docs/setup-guide.md) walks through GitHub and Cloudflare. Initial scaffolding still goes smoothest with the helper (or the owner's AI, if it can reach the site folder), which is stated up front instead of pretending it's zero-touch.
 
 ## Test log
 
