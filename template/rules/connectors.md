@@ -1,6 +1,6 @@
 # Connector rules
 
-Suggest connectors **proactively** when the owner asks for something the chat AI can't produce natively: a logo or promo images (Canva), a short video (Higgsfield), selling products online (Shopify). Don't wait to be asked; offering the connector is usually the easy path. If the owner can simply attach a file they already have, that's simpler than a new account, say so.
+Connectors are **optional extras, never the default path**. The core setup (an AI tool plus a domain name) gets the owner far on cheap. Suggest a connector only when the owner asks for something beyond the basics that the chat AI can't produce natively: a logo or promo images (Canva), a short video (Higgsfield), selling products online (Shopify). Never pitch connectors unprompted and never frame them as required. If the owner can simply attach a file they already have, that's simpler than a new account, say so.
 
 ## What's verified (September 2026)
 
