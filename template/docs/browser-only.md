@@ -178,6 +178,8 @@ This connects your GitHub repository to the service that publishes your site.
 
 ## Part 8: Review and fix (the loop you will repeat forever)
 
+From here on, your job is the conversation: you talk, you look at your phone, you say "ship it." Your AI handles the mechanics. On a pure browser chat it cannot click for you, so it gives you the exact clicks, a minute or two at a time.
+
 **Step 1: Look at your staging site on your phone.** Tap through every page: home, services, contact. Read every word out loud if you can; you will catch mistakes.
 
 **Step 2: Tell the AI what's wrong, in plain words.** Examples: "My phone number is wrong, it should be 555-0142." "I don't like the blue, make it green." "Add that we do emergency calls."
