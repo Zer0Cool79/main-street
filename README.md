@@ -92,6 +92,7 @@ template/            The pristine generated site. Scaffold it, don't edit it in 
 scripts/
   new-site.mjs       The scaffolder: template/ → new customer repo
   make-journey-video.py  Regenerates the 36-second walkthrough video (PIL + ffmpeg)
+  make-end-to-end-video.py  Regenerates the 70-second idea-to-live-site video (PIL + ffmpeg)
 docs/
   the-12-dollar-stack.md   The honest bill: what's free, what the domain costs
   domains-and-dns.md       DNS on Cloudflare, staging subdomains
