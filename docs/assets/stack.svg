@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="t d">
+  <title id="t">The $12/year stack: only the domain costs money</title>
+  <desc id="d">A bar chart showing the domain costs about 12 dollars a year while hosting, contact form email, business email forwarding, visitor stats, and spam protection all cost zero.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; }
+    .name { font-size: 14px; fill: #3d3129; }
+    .cost { font-size: 14px; font-weight: 700; }
+    .free { fill: #2e7d4f; }
+    .paid { fill: #b4552d; }
+    .track { fill: #efe8d8; }
+  </style>
+
+  <text x="20" y="30" font-size="20" font-weight="700" fill="#3d3129">What $12/year buys</text>
+
+  <g>
+    <text x="20" y="70" class="name">Domain name</text>
+    <rect x="20" y="80" width="330" height="18" rx="9" class="track"/>
+    <rect x="20" y="80" width="330" height="18" rx="9" class="paid">
+      <animate attributeName="width" from="0" to="330" dur="1.2s" fill="freeze"/>
+    </rect>
+    <text x="360" y="95" class="cost paid">~$12</text>
+  </g>
+  <g>
+    <text x="20" y="130" class="name">Hosting + SSL (Pages)</text>
+    <rect x="20" y="140" width="330" height="18" rx="9" class="track"/>
+    <text x="30" y="155" class="cost free">$0</text>
+  </g>
+  <g>
+    <text x="20" y="190" class="name">Contact form email (Resend)</text>
+    <rect x="20" y="200" width="330" height="18" rx="9" class="track"/>
+    <text x="30" y="215" class="cost free">$0</text>
+  </g>
+  <g>
+    <text x="20" y="250" class="name">Business email forwarding</text>
+    <rect x="20" y="260" width="330" height="18" rx="9" class="track"/>
+    <text x="30" y="275" class="cost free">$0</text>
+  </g>
+  <g>
+    <text x="20" y="310" class="name">Visitor stats (Analytics)</text>
+    <rect x="20" y="320" width="330" height="18" rx="9" class="track"/>
+    <text x="30" y="335" class="cost free">$0</text>
+  </g>
+
+  <text x="20" y="378" font-size="16" font-weight="700" fill="#3d3129">
+    Total: ~$12/year
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+  </text>
+</svg>

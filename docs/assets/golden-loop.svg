@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" role="img" aria-labelledby="t d">
+  <title id="t">The golden loop: ask, preview, approve, ship</title>
+  <desc id="d">You ask your AI, it updates the preview copy, you review it on your phone, you say ship it, and the live site updates.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; }
+    .box { fill: #faf6ef; stroke: #b4552d; stroke-width: 2.5; }
+    .label { font-size: 17px; font-weight: 600; fill: #3d3129; text-anchor: middle; }
+    .sub { font-size: 13px; fill: #8a7a5f; text-anchor: middle; }
+    .arrow { stroke: #b4552d; stroke-width: 3; fill: none; }
+    .dot { fill: #b4552d; }
+    .ship { fill: #2e7d4f; }
+  </style>
+
+  <rect x="70" y="16" width="260" height="62" rx="12" class="box"/>
+  <text x="200" y="42" class="label">You tell your AI</text>
+  <text x="200" y="62" class="sub">one plain message</text>
+
+  <rect x="70" y="110" width="260" height="62" rx="12" class="box"/>
+  <text x="200" y="136" class="label">AI updates preview copy</text>
+  <text x="200" y="156" class="sub">sends you the link</text>
+
+  <rect x="70" y="204" width="260" height="62" rx="12" class="box"/>
+  <text x="200" y="230" class="label">You review on your phone</text>
+  <text x="200" y="250" class="sub">the staging site</text>
+
+  <rect x="70" y="298" width="260" height="62" rx="12" class="box" style="stroke:#2e7d4f"/>
+  <text x="200" y="324" class="label" style="fill:#2e7d4f">You say ship it</text>
+  <text x="200" y="344" class="sub">live site updates in ~1 min</text>
+
+  <path id="route" d="M200 78 V110 M200 172 V204 M200 266 V298" class="arrow" stroke-dasharray="1 7" stroke-linecap="round"/>
+
+  <circle r="7" class="dot">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M200 78 V110 M200 172 V204 M200 266 V298"/>
+  </circle>
+  <circle r="3.5" fill="#faf6ef">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M200 78 V110 M200 172 V204 M200 266 V298"/>
+  </circle>
+</svg>

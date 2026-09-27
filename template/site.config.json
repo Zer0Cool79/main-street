@@ -1,0 +1,53 @@
+{
+  "$schema": "./site.schema.json",
+  "business": {
+    "address": {
+      "city": "Your City",
+      "state": "ST",
+      "street": "123 Main Street",
+      "zip": "00000"
+    },
+    "email": "hello@example.com",
+    "hours": [
+      {
+        "days": "Monday \u2013 Friday",
+        "time": "9:00 AM \u2013 5:00 PM"
+      },
+      {
+        "days": "Saturday \u2013 Sunday",
+        "time": "Closed"
+      }
+    ],
+    "name": "Your Business Name",
+    "phone": "(555) 000-0000",
+    "social": {
+      "facebook": "",
+      "instagram": ""
+    },
+    "tagline": "What you do, in one short sentence",
+    "type": "LocalBusiness"
+  },
+  "features": {
+    "analytics": true,
+    "announcementBanner": false,
+    "blog": false,
+    "booking": false,
+    "contactForm": true,
+    "emailSignup": false,
+    "faq": true,
+    "gallery": true,
+    "menu": true,
+    "testimonials": true
+  },
+  "integrations": {
+    "bookingUrl": "",
+    "resend": {
+      "fromEmail": "noreply@example.com"
+    }
+  },
+  "site": {
+    "announcement": "",
+    "description": "Your Business Name: what you do, in one short sentence. Located at 123 Main Street, Your City, ST.",
+    "domain": "example.com"
+  }
+}

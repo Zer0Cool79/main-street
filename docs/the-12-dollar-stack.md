@@ -16,6 +16,20 @@ Every service this template uses, what it costs, and where the free tier ends. N
 
 **Total: ~$10–12/year** (the domain, plus tax depending on the TLD).
 
+```mermaid
+pie title Where the $12/year goes
+    "Domain name (Cloudflare Registrar)" : 12
+    "Hosting, CDN, SSL (Pages)" : 0
+    "Contact form email (Resend)" : 0
+    "Business email forwarding" : 0
+    "Visitor stats (Web Analytics)" : 0
+    "Spam protection (Turnstile)" : 0
+```
+
+(Yes, the pie is one slice. That's the point.)
+
+![Animated bar chart: the domain costs about $12 a year; hosting, contact form email, business email forwarding, and visitor stats all cost $0](assets/stack.svg)
+
 ## What "free" actually means here
 
 - **No credit card required** for Cloudflare Pages, Email Routing, Web Analytics, or Turnstile. Resend's free tier also starts without one.

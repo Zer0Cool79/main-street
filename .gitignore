@@ -1,7 +1,22 @@
+# Dependencies
 node_modules/
-dist/
-.dev.vars
-.DS_Store
-*.log
 
-.wrangler/
+# Build output
+dist/
+
+# Local dev / secrets (never commit)
+.dev.vars
+.env
+.env.local
+*.pem
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

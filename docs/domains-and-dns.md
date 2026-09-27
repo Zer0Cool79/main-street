@@ -8,6 +8,15 @@ Your domain needs two jobs done: **hosting the site** (Cloudflare Pages) and **D
 
 None of this is required — the site works fine on `*.pages.dev` addresses with DNS anywhere — but this is the recommended setup, and the setup guide assumes it.
 
+```mermaid
+flowchart TD
+    YOU[You: tell your registrar<br/>to use Cloudflare's<br/>nameservers] --> CF[Cloudflare DNS<br/>the phone book]
+    CF --> LIVE[yourdomain.com<br/>DNS record, automatic]
+    CF --> STG[staging.yourdomain.com<br/>DNS record, automatic]
+    LIVE --> SITE1[Live site<br/>via Cloudflare Pages]
+    STG --> SITE2[Staging site<br/>via Cloudflare Pages]
+```
+
 ## The one move: point your nameservers at Cloudflare
 
 "Moving DNS to Cloudflare" means one change: tell your domain registrar to use Cloudflare's nameservers instead of theirs. Cloudflare is still not your registrar unless you transfer the domain (optional, see below); you're just renting their phone book.
