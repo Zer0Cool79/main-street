@@ -2,47 +2,53 @@
 
 Your AI assistant is your web developer. It runs on the chat subscription you already have (Claude, ChatGPT, or similar). You do **not** need API keys, API credits, or any usage-based billing. If an AI ever asks you for an API key, say no and tell it to proceed without one.
 
-There are two ways to connect. Path A is the full experience. Path B needs nothing installed.
+Two people make this work, and one flow serves both.
 
-## Path A: an AI app with access to your site folder (recommended)
+- **The owner** runs the business and, from now on, the website. They talk to the AI in plain words, check the preview on their phone, and say "ship it." They never install anything, never touch GitHub, never choose between technical options.
+- **The helper** is the somewhat-savvy person who does the one-time setup: a Fiverr freelancer, a friend, a family member. They follow [setup-guide.md](setup-guide.md), connect everything once, and hand it over. (No helper? A capable AI can walk the owner through setup too; the guide says where.)
 
-This is the setup where the golden loop works exactly as described: you talk, your AI edits the site, you get a preview link, you say "ship it."
+There are no paths to choose. The owner opens the AI they already use and talks. The AI reads the site's operating manual (`CLAUDE.md`) and handles the mechanics itself: if it can reach the site files, it edits directly; if it can't, it gives the owner or helper exact click-by-click steps. Nobody picks a lane.
 
-1. Install your AI provider's coding app on your computer. (For Claude, that's Claude Code. Your ChatGPT subscription has an equivalent. Names change; your AI chat can tell you the current one.)
-2. Sign in **with your existing subscription**. Not an API key. There is nothing extra to buy and no per-message meter running.
-3. Open your website's folder in the app.
-4. Say: **"read CLAUDE.md."** That's the whole setup. CLAUDE.md is the operating manual your site carries for exactly this moment.
+## If you're the owner: connect in two minutes
 
-From here, every update is a conversation. Your AI can edit files, run the checks, and put changes on your staging site for your approval.
+1. Open the AI you already pay for: the Claude or ChatGPT app, their websites, or this chat.
+2. Give it the operating manual: attach your site's `CLAUDE.md`, or tell it where your site folder or repo lives. (Your helper may have already done this during setup.)
+3. Say: **"read CLAUDE.md."**
 
-## Path B: web chat plus GitHub in your browser (nothing to install)
+Then just talk, like in [these real examples](examples.md):
 
-If you'd rather not install anything, this works with plain claude.ai or chatgpt.com in your browser.
+```
+Change my Saturday hours to 9am to 2pm.
+```
 
-1. Open a new chat. Attach your site's `CLAUDE.md` (and the specific file you're asking about, if you know it). Some plans can also connect to your GitHub repo directly; if yours offers that, connect it.
-2. Say: "read CLAUDE.md in the files I attached. You're my web developer."
-3. Ask for your change in plain English. Your AI will draft it and show you exactly what changed.
-4. You apply it with GitHub's edit button: [editing-in-browser.md](editing-in-browser.md) walks through it click by click. Always edit the `staging` branch first, check the preview link, then say "ship it."
+The rhythm from here on: you ask, your AI puts the change on your private preview site and sends you the link, you look at it on your phone, you say **"ship it."** That's the entire job. If your AI ever asks you to choose between technical options, say: "you decide, just get me the preview link."
 
-Path B is slower for big changes (you're the hands), but it needs zero setup and works from any computer, including a Chromebook or a library PC.
+## If you're the helper: the one-time setup
 
-## Which AI do you use? (interface map)
+You're here because the owner trusts you with the technical afternoon. It's about an hour, and [setup-guide.md](setup-guide.md) is written for you, step by step.
 
-The contract is the same everywhere: `CLAUDE.md` + `rules/` tell any AI its job. Only the *write path* changes: can it put the change on your staging site itself, or does it hand you the change to apply?
+1. Get the site folder on GitHub and connected to Cloudflare Pages (setup guide, Steps 1 through 6).
+2. Connect the owner's AI to the site: point their AI app at the site folder or repo, open `CLAUDE.md` together, and send the copy-paste message below.
+3. Do one real change together while the owner watches: change a headline, open the preview link on their phone, say "ship it." Once they've seen the loop, you're done.
+4. Hand it over. The owner runs day-to-day updates alone from here. They'll call you when something looks weird.
 
-| Your AI | How it sees your files | What happens when you ask for a change |
+### How the AI reaches the files (mechanics reference)
+
+The contract is the same everywhere: `CLAUDE.md` + `rules/` tell any AI its job. Only the write path varies, and the AI sorts it out on its own. This table is for you, not the owner.
+
+| AI | How it sees the files | What happens on a change request |
 |---|---|---|
-| **Claude Code** (terminal app, Claude subscription) | Opens your site folder directly | Full loop: it edits, commits, pushes; you approve the preview and say "ship it" |
-| **Claude Cowork** (Claude app, paid plans) | You grant it your site folder; it reads and writes files, no terminal | It edits files directly; sync the folder to GitHub with the bridge below |
-| **muse.ai** (this chat) | Full access while you work here | Full loop: edits, preview branches, deploys, all handled in chat |
+| **Claude Code** (terminal app, Claude subscription) | Opens the site folder directly | Full loop: edits, commits, pushes; the owner approves the preview |
+| **Claude Cowork** (Claude app, paid plans) | The owner grants it the site folder; it reads and writes files, no terminal | Edits directly; sync the folder to GitHub with the bridge below |
+| **muse.ai** (this chat) | Full access while working here | Full loop: edits, preview branches, deploys, all handled in chat |
 | **ChatGPT app / agent mode** | Varies by version: a local folder or the GitHub connector | If it edits files directly, sync with the bridge below; otherwise it drafts and you apply it |
-| **claude.ai or chatgpt.com in the browser** | Attach files, or connect your GitHub repo if your plan offers it | It drafts the change; you apply it with GitHub's edit button ([Path B](#path-b-web-chat-plus-github-in-your-browser-nothing-to-install)) |
+| **claude.ai or chatgpt.com in the browser** | Attach files, or connect the GitHub repo if the plan offers it | It drafts the change; apply it with GitHub's edit button ([editing-in-browser.md](editing-in-browser.md)) |
 
-**The no-terminal bridge:** if your AI edits files on your computer but can't push to GitHub itself, install GitHub Desktop (free, from GitHub). It syncs your folder with one click, no commands. Your AI will tell you when to press it.
-
-**Interfaces change fast.** If yours isn't listed or the menus moved, the two questions that matter are: *can it see my files?* and *can it get changes to GitHub?* Tell your AI the answers and say "get me to the staging preview."
+**The no-terminal bridge:** if the owner's AI edits files on their computer but can't push to GitHub itself, install GitHub Desktop (free, from GitHub). It syncs the folder with one click, no commands. Tell the owner to press it when their AI says so.
 
 ## Copy-paste first message
+
+The owner sends this to their AI:
 
 ```
 I just set you up with my website files. Read CLAUDE.md first, then tell me
@@ -53,7 +59,7 @@ If its answer sounds right (changes go to the staging preview first, nothing goe
 
 ## If something's confusing
 
-- **"I don't know which app to install."** Ask your AI chat: "I pay for [Claude/ChatGPT]. What app do I install so you can work directly in my website folder, using my subscription and no API keys?"
-- **"The menus look different from the guide."** They move. Tell your AI where you are ("I'm on the settings page and I don't see...") and it will guide you from there.
-- **"My AI can't see my repo."** Attach `CLAUDE.md` to the chat yourself. That file plus your question is enough for most tasks.
-- **"It asked me for an API key."** It doesn't need one. Say: "No API keys. Work with my chat subscription." If it insists, it's confused; start a fresh chat.
+- **"Which AI should the owner use?"** Whichever they already pay for. Claude, ChatGPT, muse.ai, all fine. Never make them buy something new.
+- **"The menus look different from the guide."** They move. Tell the AI where you are ("I'm on the settings page and I don't see...") and it will guide you from there.
+- **"The AI can't see the repo."** Attach `CLAUDE.md` to the chat. That file plus the question is enough for most tasks.
+- **"It asked for an API key."** It doesn't need one. Say: "No API keys. Work with my chat subscription." If it insists, it's confused; start a fresh chat.
