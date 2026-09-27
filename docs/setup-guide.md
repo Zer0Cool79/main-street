@@ -37,33 +37,54 @@ npm run dev
 
 Open the address it prints. That's your site.
 
-## Step 3: Buy your domain (5 minutes)
+## Step 3: Domain + DNS on Cloudflare (10 minutes + waiting)
 
-1. Go to [cloudflare.com/products/registrar](https://www.cloudflare.com/products/registrar/) and sign in.
-2. Search for your domain, buy it. Cloudflare sells at wholesale cost with no markup (~$10/year for `.com`).
-3. Why here and not GoDaddy/Namecheap: your DNS, hosting, and email all end up in one dashboard, and there's nothing to wire together later.
+You want Cloudflare holding your DNS. That's what gives your staging site a clean address (`staging.yourdomain.com`) instead of an ugly `*.pages.dev` URL, and it makes the domain wiring automatic later.
+
+**Buying new?** Buy it at [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/): wholesale cost, no markup (~$10/year for `.com`), and DNS is already on Cloudflare. Done — skip to Step 4.
+
+**Already own one elsewhere?** Move its DNS to Cloudflare (free, your registrar stays as-is):
+
+1. In Cloudflare: **Add domain**, enter it, continue. Cloudflare shows you two nameservers.
+2. **Read the email warning first:** changing nameservers moves *every* DNS record. Copy your existing records (especially MX/email records) before switching — see [domains-and-dns.md](domains-and-dns.md), which your AI assistant can walk through with you.
+3. At your registrar, replace the domain's nameservers with Cloudflare's two.
+4. Back in Cloudflare, **Check nameservers**. Status flips to **Active** in minutes to a few hours. Go get coffee; don't keep poking it.
 
 ## Step 4: Connect Cloudflare Pages (10 minutes)
 
 1. In Cloudflare: **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
 2. Authorize GitHub if asked, and pick your repo.
 3. Build settings:
+   - Production branch: `main`
    - Build command: `npm run build`
    - Build output directory: `dist`
    - (Leave everything else default.)
 4. Click **Save and Deploy**. Cloudflare builds your site and gives it a `*.pages.dev` address. It's live already, just not at your domain yet.
 
-From now on, **every push to `main` rebuilds and redeploys automatically.** Pushes to other branches get preview URLs.
+From now on, **every push to `main` rebuilds and redeploys production automatically.**
 
-## Step 5: Point your domain at the site (5 minutes + waiting)
+## Step 5: Your live domain (5 minutes + waiting)
 
 1. In Pages → your site → **Custom domains** → **Set up a custom domain**.
-2. Enter your domain (e.g. `goldencrumbbakery.com`). Cloudflare adds the DNS records and provisions SSL automatically.
-3. Wait. DNS can take a few minutes to a few hours. Don't keep changing things while you wait; check with the audit script later.
+2. Enter your domain (e.g. `goldencrumbbakery.com`). Cloudflare adds the DNS record and provisions SSL automatically — no records to type.
+3. Add the `www` version too if you want it (same screen).
+4. Wait for DNS to propagate (minutes to hours). Then open your domain: that's your live site.
 
-Add the `www` version too if you want it (same screen).
+## Step 6: Your staging site at staging.yourdomain.com (10 minutes)
 
-## Step 6: Business email (10 minutes, recommended)
+This is the preview copy where every change lands first. One permanent address, pretty enough to bookmark on your phone.
+
+1. **Turn on staging builds.** Pages → your site → **Settings** → **Builds & deployments** → **Branch deploy controls**: enable preview deployments and make sure the `staging` branch is included.
+2. **Push the `staging` branch once.** If it doesn't exist yet: create it from `main` and push. Cloudflare builds it. (The staging address can't attach until this first build succeeds — that's a Cloudflare rule, not us.)
+3. **Attach the subdomain.** **Custom domains** → **Set up a custom domain** → enter `staging.yourdomain.com` → assign it to the **`staging`** branch → **Activate**. Cloudflare creates the DNS record automatically.
+4. **Leave the record proxied** (orange cloud). A gray-cloud record can silently serve the live site on the staging address.
+5. Open `staging.yourdomain.com`. That's your staging site, forever at that address.
+
+Staging is automatically hidden from Google (it sends `X-Robots-Tag: noindex`), so customers never stumble onto the preview copy. Don't "fix" that — it's on purpose.
+
+**No custom domain?** Everything still works: staging lives at `staging.<project>.pages.dev`. The pretty subdomain just needs DNS on Cloudflare.
+
+## Step 7: Business email (10 minutes, recommended)
 
 **Receiving** (free, Cloudflare Email Routing):
 
@@ -84,11 +105,11 @@ Until the key exists, the contact form hides itself and shows your email address
 
 **Replying as the business from Gmail** (optional): Gmail → Settings → Accounts → "Send mail as" → add `hello@yourdomain.com` using Resend's SMTP credentials. Now replies come from the business address.
 
-## Step 7: Analytics (5 minutes, optional)
+## Step 8: Analytics (5 minutes, optional)
 
 Cloudflare → your site → **Analytics** → **Web Analytics** → add your site. Copy the beacon token into `integrations.cloudflareAnalyticsToken` in `site.config.json`, commit, push. The snippet only renders when the token is present. No cookies, no consent banner.
 
-## Step 8: Meet your AI web developer
+## Step 9: Meet your AI web developer
 
 See [owner-quickstart.md](owner-quickstart.md). The short version: open your AI chat, point it at your repo, and talk. The repo explains itself via `CLAUDE.md`. From here on, every update is a conversation.
 
@@ -96,16 +117,18 @@ See [owner-quickstart.md](owner-quickstart.md). The short version: open your AI 
 
 ```bash
 npm run audit https://yourdomain.com
+npm run audit https://staging.yourdomain.com
 ```
 
-It checks your pages return 200, your 404 page actually 404s, HTTPS works, SEO tags are present. Fix anything red before announcing the site.
+The first checks the live site; the second checks staging (it also verifies staging is hidden from search engines). Fix anything red before announcing the site.
 
 ## What "done" looks like
 
 - [ ] Your domain shows your site, with your business details.
+- [ ] `staging.yourdomain.com` shows the staging copy (push something to the `staging` branch and watch it appear).
 - [ ] The contact form sends you an email (submit a test).
 - [ ] Email to `hello@yourdomain.com` lands in your inbox.
-- [ ] `npm run audit` is all green.
-- [ ] You've made one change through your AI assistant using a preview link.
+- [ ] `npm run audit` is all green on both addresses.
+- [ ] You've made one change through your AI assistant using the staging link.
 
 Welcome to the $12/year club.

@@ -10,7 +10,7 @@ You don't need to explain the project. Say "read CLAUDE.md" if it ever seems los
 
 ## The rhythm: change → staging → approve → live
 
-Every task follows the same beat. Your site has two copies: a **staging site** where changes appear first, and your **live site** that customers see.
+Every task follows the same beat. Your site has two copies: a **staging site** (`staging.yourdomain.com`) where changes appear first, and your **live site** that customers see.
 
 1. **You ask**, in plain English.
 2. **It puts** the change on your staging site and sends you the link.

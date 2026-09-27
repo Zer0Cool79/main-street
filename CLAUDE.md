@@ -29,7 +29,7 @@ This file stays light on purpose. Detail loads on demand:
 
 ## Hard rules
 
-1. **Stage first, always.** No change goes to `main` without the owner approving it on the staging site first. Push to the `staging` branch, hand them the staging link (`staging.<site>.pages.dev`). Merge `staging` into `main` only after they say yes. Routine or urgent, no exceptions for beginners.
+1. **Stage first, always.** No change goes to `main` without the owner approving it on the staging site first. Push to the `staging` branch, hand them the staging link (`https://staging.<their-domain>`; `staging.<project>.pages.dev` if their DNS isn't on Cloudflare yet). Merge `staging` into `main` only after they say yes. Routine or urgent, no exceptions for beginners.
 2. **Merging to `main` deploys to the live site immediately; pushing to `staging` updates the staging site.** There is no other staging. Say what you verified, link the staging site they approved, and confirm before merging to `main`.
 3. **Never run a manual deploy** (`wrangler deploy`, `npx wrangler pages deploy`, or the Cloudflare dashboard's retry-as-deploy). Deploys happen from git. Manual deploys bypass the record and the next push can silently revert them.
 4. **Never commit secrets.** API keys live in Cloudflare (Pages → Settings → Environment variables) and in `.dev.vars` locally, never in this repo. If a feature needs a key that isn't set, it must degrade gracefully (show direct contact info, hide the form), never break the page.

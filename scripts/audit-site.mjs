@@ -13,6 +13,9 @@ if (!/^https:\/\//.test(base) && !isLocal) {
   process.exit(2);
 }
 const host = new URL(base).host;
+// Staging-like hosts (staging.<domain>, *.pages.dev) must stay out of
+// search engines; production must stay indexable.
+const isStagingHost = host.startsWith("staging.") || host.endsWith(".pages.dev");
 const results = [];
 
 async function check(name, fn) {
@@ -62,11 +65,25 @@ await check("http redirects to https", async () => {
   console.log("  SKIP  http redirects to https (localhost only)");
 }
 
+if (isStagingHost) {
+await check("staging sends X-Robots-Tag noindex", async () => {
+  const { res } = await get("/");
+  const tag = res.headers.get("x-robots-tag") ?? "";
+  if (!/noindex/i.test(tag)) throw new Error(`got "${tag || "(missing)"}", expected noindex`);
+});
+} else {
 await check("homepage is not noindexed", async () => {
   const { text } = await get("/");
   const m = text.match(/<meta[^>]+name=["']robots["'][^>]*>/i);
   if (m && /noindex/i.test(m[0])) throw new Error("robots meta contains noindex");
 });
+
+await check("production does not send X-Robots-Tag noindex", async () => {
+  const { res } = await get("/");
+  const tag = res.headers.get("x-robots-tag") ?? "";
+  if (/noindex/i.test(tag)) throw new Error(`got "${tag}" on production`);
+});
+}
 
 await check("homepage has JSON-LD structured data", async () => {
   const { text } = await get("/");
