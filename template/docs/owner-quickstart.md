@@ -67,6 +67,7 @@ If your assistant isn't doing these things, say so: "Explain it like I'm new to 
 - **Small asks are best.** "Change the headline" beats "redesign the site." Big changes still work; they just get more preview rounds.
 - **Your words win.** If you dictate copy, it goes in verbatim. If the assistant rewrites your voice, tell it: "use my words exactly."
 - **Photos are your superpower.** Real photos of your real business improve the site more than any design tweak. Keep sending them.
+- **Your AI can borrow other apps.** For a logo, promo images, a short video, or selling online, your AI can plug into apps like Canva, Higgsfield, or Shopify. See [docs/connectors.md](connectors.md) for what to ask.
 
 ## When something's wrong
 
