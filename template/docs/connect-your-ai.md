@@ -23,6 +23,8 @@ Change my Saturday hours to 9am to 2pm.
 
 The rhythm from here on: you ask, your AI puts the change on your private preview site and sends you the link, you look at it on your phone, you say **"ship it."** That's the entire job. If your AI ever asks you to choose between technical options, say: "you decide, just get me the preview link."
 
+**If all you have is this browser chat** (no coding app, no terminal, no helper): start with [docs/browser-only.md](browser-only.md). It is the complete path from a ChatGPT or Claude account to a live site, every step written out, nothing installed.
+
 ## If you're the helper: the one-time setup
 
 You're here because the owner trusts you with the technical afternoon. It's about an hour, and [setup-guide.md](setup-guide.md) is written for you, step by step.

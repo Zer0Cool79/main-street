@@ -35,7 +35,7 @@ About $12 a year for the domain name. Everything else runs on free tiers, plus t
 ## You don't need to be technical (after one afternoon)
 
 - **Day to day: no code, no terminal, no jargon.** You talk to the AI assistant you already pay for. It handles the technical parts; you make the decisions.
-- **The one-time setup takes an afternoon** (or hand it to someone technical): getting the site online. Your AI talks you through it, and it never needs API keys: [setup guide](template/docs/setup-guide.md), [connect your AI](template/docs/connect-your-ai.md).
+- **The one-time setup takes an afternoon** (or hand it to someone technical): getting the site online. Your AI talks you through it, and it never needs API keys: [setup guide](template/docs/setup-guide.md), [connect your AI](template/docs/connect-your-ai.md). Nothing but a ChatGPT or Claude browser tab and no helper? There is a complete zero-install path: [browser-only setup](template/docs/browser-only.md).
 - The one thing worth knowing: your secret keys (for the contact form) live in the Cloudflare dashboard, never in your website files. Your AI walks you through it: [template/docs/api-keys.md](template/docs/api-keys.md).
 
 See what a finished site looks like, what the setup really involves (real commands, real output), and how easy everyday updates are: [template/docs/examples.md](template/docs/examples.md).
