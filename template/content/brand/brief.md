@@ -6,6 +6,13 @@ Delete the hints in parentheses as you fill each one in. Skip anything that does
 
 ---
 
+## Current website, if you have one
+
+Your current site's address, if you have one.
+(Give your AI the domain and it will pull your content from the old site as a head start: "Pull everything you can from mysite.com into my shoebox." You confirm what's right before anything goes on the new site.)
+
+_Your answer:_
+
 ## Your story
 
 Why did you start this business? What are you known for around town?

@@ -2,6 +2,10 @@
 
 This folder is your **shoebox**. Toss everything about your business in here, the way you'd toss photos and notes into a real shoebox, and your AI uses it to build your website.
 
+## Shortcut: already have a website?
+
+If you have a current site, tell your AI its domain: "Pull everything you can from mysite.com into the shoebox." It will fetch your words, facts, and photos from the old site and file them here for your approval. Everything below still applies for anything the old site didn't have.
+
 ## What goes where
 
 - **`photos/`**: pictures of your business. Your storefront, you at work, your products, your team, the inside of your shop. Taken with your phone is perfect.
