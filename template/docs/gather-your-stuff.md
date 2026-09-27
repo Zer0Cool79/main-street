@@ -4,6 +4,14 @@ Your website looks its best when it's built from **your** business: your photos,
 
 Everything goes into one folder, the **shoebox**: `content/brand/`. (If the words "folder" and "repo" make your eyes glaze over, skip this page and jump to ["Or just answer in chat"](#or-just-answer-in-chat) below. Same result, no files.)
 
+## Already have a website? Start here.
+
+If you have a current website, you can skip most of the homework below. Just give your AI the domain and it will pull your words, your photos, and your page list off the old site into the shoebox for your approval. Paste this:
+
+> Here's my current site: [your-site.com]. Pull everything you can from it into my shoebox.
+
+Your AI will show you what it found. You confirm what's right, fix what's outdated, and the new site gets built from that. Anything it can't reach, you fill in with the steps below.
+
 ## Photos to take with your phone
 
 Ten minutes, daylight, phone camera. You don't need all of these; more is just better.
