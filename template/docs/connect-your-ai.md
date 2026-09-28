@@ -23,7 +23,7 @@ Change my Saturday hours to 9am to 2pm.
 
 The rhythm from here on: you ask, the change appears on your preview copy, you look at it on your phone, you say **"ship it."** That's the entire job. If your AI has direct access to your files, it edits them and sends you the preview link; if it doesn't, it hands you the exact clicks and paste text and you do the clicking, like in [the browser-only guide](browser-only.md). If your AI ever asks you to choose between technical options, say: "you decide, just get me the preview link."
 
-One thing to know: in a plain browser chat, the chat forgets the manual when you start a new conversation. Re-attach `CLAUDE.md` at the start of each new chat and say "read CLAUDE.md" again.
+One thing to know: in a plain browser chat, play it safe and re-attach `CLAUDE.md` at the start of each new conversation and say "read CLAUDE.md" again. (Some paid plans now keep your files around between chats, ChatGPT through its Library and Claude through Projects, but a fresh chat is the only behavior that works everywhere.)
 
 **If all you have is this browser chat** (no coding app, no terminal, no helper): start with [docs/browser-only.md](browser-only.md). It is the complete path from a ChatGPT or Claude account to a live site, every step written out, nothing installed.
 
@@ -42,11 +42,13 @@ The contract is the same everywhere: `CLAUDE.md` + `rules/` tell any AI its job.
 
 | AI | How it sees the files | What happens on a change request |
 |---|---|---|
-| **Claude Code** (terminal app, Claude subscription) | Opens the site folder directly | Full loop: edits, commits, pushes; the owner approves the preview |
-| **Claude Cowork** (Claude app, paid plans) | The owner grants it the site folder; it reads and writes files, no terminal | Edits directly; sync the folder to GitHub with the bridge below |
-| **muse.ai** (this chat) | Full access while working here | Full loop: edits, preview branches, deploys, all handled in chat |
-| **ChatGPT app / agent mode** | Varies by version: a local folder or the GitHub connector | If it edits files directly, sync with the bridge below; otherwise it drafts and you apply it |
-| **claude.ai or chatgpt.com in the browser** | Attach files, or connect the GitHub repo if the plan offers it | It drafts the change; apply it with GitHub's edit button ([editing-in-browser.md](editing-in-browser.md)) |
+| **Claude Code** (terminal app; Claude paid plans, $20/mo and up; a helper's tool, not the owner's) | Opens the site folder directly on the helper's computer | Full loop: edits, commits, pushes (needs the helper's git login working); the owner approves the preview |
+| **Claude Cowork** (Claude app, paid plans only, $20/mo and up) | The owner grants it the site folder; it reads and writes files, no terminal | Edits files directly; sync the folder to GitHub with the bridge below. Anthropic is folding Cowork into ordinary chat, so the buttons may look different than described here; the folder access is what matters |
+| **muse.ai in a browser** (free tier and paid tiers) | Cannot see the owner's computer files; a GitHub connector exists but its editing powers are not confirmed | Drafts the complete change and gives exact clicks and paste text; apply it with GitHub's edit button ([editing-in-browser.md](editing-in-browser.md)) |
+| **Muse Mac app** | Works with files and apps the owner authorizes, with permission | Edits files directly; sync the folder to GitHub with the bridge below. Feature details vary by plan; the AI says when something needs an upgrade |
+| **Codex** (chatgpt.com/codex; ChatGPT Plus $20/mo and up) | Connect GitHub once, then describe the change in plain words | Edits in a cloud workspace, pushes a branch, and opens a pull request; the owner reviews the preview link and clicks Merge. No pasting. Closest to the full loop on ChatGPT |
+| **ChatGPT desktop app / Work mode** (full access needs a paid plan) | Works with local folders on the computer; can operate across files and apps | Edits files directly; sync with the bridge below. A helper does the install and folder setup |
+| **claude.ai or chatgpt.com in a browser tab** | Attach the files (re-attach each new chat to be safe); ChatGPT's GitHub connector reads the repo but cannot change it | Drafts the complete change; apply it with GitHub's edit button ([editing-in-browser.md](editing-in-browser.md)) |
 
 **The no-terminal bridge:** if the owner's AI edits files on their computer but can't push to GitHub itself, install GitHub Desktop (free, from GitHub). It syncs the folder with one click, no commands. Tell the owner to press it when their AI says so.
 
@@ -67,3 +69,5 @@ If its answer sounds right (changes go to the staging preview first, nothing goe
 - **"The menus look different from the guide."** They move. Tell the AI where you are ("I'm on the settings page and I don't see...") and it will guide you from there.
 - **"The AI can't see the repo."** Attach `CLAUDE.md` to the chat. That file plus the question is enough for most tasks.
 - **"It asked for an API key."** It doesn't need one for itself. Say: "No API keys for you. Work with my chat subscription." If it insists, it's confused; start a fresh chat.
+- **"The owner has ChatGPT Plus. Can they skip the pasting?"** Yes. Codex (chatgpt.com/codex) connects to GitHub once, then the owner describes the change in plain words and Codex opens a pull request. The owner reviews the preview link and clicks Merge, same as the normal loop, without touching a file. It needs Plus or higher, and a one-time GitHub install the helper can do.
+- **"Should we set up a custom GPT or a special plugin for the site?"** No. Plain chat plus CLAUDE.md is the whole interface, and OpenAI has retired new custom GPTs. Nothing to build, nothing to maintain.

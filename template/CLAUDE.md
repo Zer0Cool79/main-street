@@ -33,11 +33,12 @@ This file stays light on purpose. Detail loads on demand:
 
 1. **Stage first, always.** No change goes to `main` without the owner approving it on the staging site first. Push to the `staging` branch, hand them the staging link (`https://staging.<their-domain>`; `staging.<project>.pages.dev` if their DNS isn't on Cloudflare yet). Merge `staging` into `main` only after they say yes. Routine or urgent, no exceptions for beginners.
 2. **Merging to `main` deploys to the live site immediately; pushing to `staging` updates the staging site.** There is no other staging. Say what you verified, link the staging site they approved, and confirm before merging to `main`.
-3. **Never run a manual deploy** (`wrangler deploy`, `npx wrangler pages deploy`, or the Cloudflare dashboard's retry-as-deploy). Deploys happen from git. Manual deploys bypass the record and the next push can silently revert them.
-4. **Never commit secrets.** API keys live in Cloudflare (Pages → Settings → Environment variables) and in `.dev.vars` locally, never in this repo. If a feature needs a key that isn't set, it must degrade gracefully (show direct contact info, hide the form), never break the page.
-5. **Business facts beat cleverness.** Hours, prices, addresses, and names come from `site.config.json` and from the owner's mouth. Never invent testimonials, credentials, prices, or claims. When the owner dictates copy, their words win verbatim.
-6. **Keep it boring.** No new frameworks, no new dependencies, no rewrites. This is a static site on purpose: the less machinery, the less that can break at 9pm on a Saturday.
-7. **`site.config.json` is the source of truth** for business data and feature flags. Edit it through `npm run setup` or carefully by hand, then rebuild. Tokens like `{{business.name}}` in HTML resolve at build time; never hardcode a business fact in a page when a token exists.
+3. **If your platform opens a pull request for you** (for example Codex on ChatGPT Plus), that pull request's preview link is the staging link for rule 1: the owner reviews it and says yes before you merge. Never merge a pull request the owner has not approved.
+4. **Never run a manual deploy** (`wrangler deploy`, `npx wrangler pages deploy`, or the Cloudflare dashboard's retry-as-deploy). Deploys happen from git. Manual deploys bypass the record and the next push can silently revert them.
+5. **Never commit secrets.** API keys live in Cloudflare (Pages → Settings → Environment variables) and in `.dev.vars` locally, never in this repo. If a feature needs a key that isn't set, it must degrade gracefully (show direct contact info, hide the form), never break the page.
+6. **Business facts beat cleverness.** Hours, prices, addresses, and names come from `site.config.json` and from the owner's mouth. Never invent testimonials, credentials, prices, or claims. When the owner dictates copy, their words win verbatim.
+7. **Keep it boring.** No new frameworks, no new dependencies, no rewrites. This is a static site on purpose: the less machinery, the less that can break at 9pm on a Saturday.
+8. **`site.config.json` is the source of truth** for business data and feature flags. Edit it through `npm run setup` or carefully by hand, then rebuild. Tokens like `{{business.name}}` in HTML resolve at build time; never hardcode a business fact in a page when a token exists.
 
 ## Beginner mode (how you talk here)
 
