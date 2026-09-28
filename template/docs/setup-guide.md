@@ -8,17 +8,36 @@ The complete walkthrough: from zero to a live website at your own domain. Budget
 
 - A GitHub account (free).
 - A Cloudflare account (free).
-- About $10/year for the domain name.
-- An AI chat subscription you already use (Claude, ChatGPT, or similar). Connect it first: [connect-your-ai.md](connect-your-ai.md). Your AI never needs API keys.
-- Node.js from [nodejs.org](https://nodejs.org), only if you'll run commands on your own computer (the hands-on path in Step 2).
+- About $10-12/year for the domain name. (Cloudflare needs a payment method on the account to buy it.)
+- An AI chat subscription you already use (Claude, ChatGPT, or similar). Connect it first: [connect-your-ai.md](connect-your-ai.md). Your AI itself never needs API keys.
+- Node.js 22 (match `.node-version`), only if you'll run commands on your own computer (the hands-on path in Step 2).
+- Git on your computer, or GitHub Desktop (free), for the one-time push in Step 1.
+
+**Before you start, collect from the owner:** the business details (name, tagline, address, phone, email, hours, services, prices), the domain name they want (or whether you're buying a new one), whose GitHub and Cloudflare accounts you'll use (theirs, not yours), and a Gmail address for the Email Routing destination.
 
 ## Step 1: Get your site folder (5 minutes)
 
 Your site starts as a copy of the `template/` folder in the Main Street repo.
 
-**Easiest:** ask your AI (connected in [connect-your-ai.md](connect-your-ai.md)): "Download the Main Street template from github.com/davegelinas/main-street and scaffold my site folder." It handles the download, the copy, and the naming.
+**Easiest (if your AI can reach files on your computer, e.g. Claude Code):** ask it: "Download the Main Street template from github.com/davegelinas/main-street and scaffold my site folder." It handles the download, the copy, and the naming. If your AI is a plain browser tab with no file access, use the by-hand path below, or the owner can follow [browser-only.md](browser-only.md).
 
-**By hand:** download the [repo zip](https://github.com/davegelinas/main-street/archive/refs/heads/main.zip), unzip it, and copy everything inside `template/` into a new folder named after your business (e.g. `acme-plumbing`). That folder is your site. Then put it on GitHub: create a new repo there and push the folder (say to your AI: "help me put my site folder on GitHub" for click-by-click help).
+**By hand:** download the [repo zip](https://github.com/davegelinas/main-street/archive/refs/heads/main.zip), unzip it, and copy everything inside `template/` into a new folder named after your business (e.g. `acme-plumbing`). Include hidden files: `.github/`, `.gitignore`, and `.node-version` must come along. That folder is your site.
+
+**Put the folder on GitHub** (the scaffolder only stages files locally; nothing is on GitHub until you do this). From your site folder:
+
+```bash
+git branch -M main
+git commit -m "First version of the site"
+```
+
+Then create the repo at github.com/new (same name as the folder, e.g. `acme-plumbing`), and:
+
+```bash
+git remote add origin https://github.com/YOUR-ACCOUNT/YOUR-REPO.git
+git push -u origin main
+```
+
+(Say to your AI: "help me put my site folder on GitHub" for click-by-click help.)
 
 ## Step 2: Make it yours (10 minutes)
 
@@ -27,7 +46,7 @@ Your site starts as a copy of the `template/` folder in the Main Street repo.
 **Helper (or hands-on),** on your computer, from your site folder:
 
 ```bash
-cd acme-plumbing
+cd ../acme-plumbing
 npm install
 npm run setup
 ```
@@ -83,7 +102,14 @@ From now on, **every push to `main` rebuilds and redeploys production automatica
 This is the preview copy where every change lands first. One permanent address, pretty enough to bookmark on your phone.
 
 1. **Turn on staging builds.** Pages → your site → **Settings** → **Builds & deployments** → **Branch deploy controls**: choose **All non-production branches** (or otherwise make sure `staging` is included).
-2. **Push the `staging` branch once.** If it doesn't exist yet: create it from `main` and push. Cloudflare builds it. The first build must succeed before the next step works. Your staging branch already has an address: `staging.<project>.pages.dev` (open it to confirm the build worked).
+2. **Push the `staging` branch once.** From your site folder:
+
+   ```bash
+   git checkout -b staging main
+   git push -u origin staging
+   ```
+
+   Cloudflare builds it. The first build must succeed before the next step works. Your staging branch already has an address: `staging.<project>.pages.dev` (open it to confirm the build worked).
 3. **Attach the subdomain.** **Custom domains** → **Set up a custom domain** → enter `staging.yourdomain.com` → **Continue** → **Activate domain**. Cloudflare creates the DNS record automatically.
 4. **Point it at the staging branch.** Go to your domain's **DNS** settings, find the `CNAME` record named `staging`, and change its target from `<project>.pages.dev` to `staging.<project>.pages.dev` (your branch's address from step 2). **Leave it proxied** (orange cloud on). An unproxied (gray-cloud) record silently serves the *live* site on the staging address.
 5. Open `staging.yourdomain.com`. That's your staging site, forever at that address.
@@ -92,26 +118,30 @@ Staging is automatically hidden from Google (it sends `X-Robots-Tag: noindex`), 
 
 **No custom domain?** Everything still works: staging lives at `staging.<project>.pages.dev`. The pretty subdomain just needs DNS on Cloudflare.
 
+**One-time safety lock (recommended):** on GitHub, open your site repo → **Settings** → **Branches** → **Add branch protection rule**. Branch name pattern: `main`. Check **Require a pull request before merging**. Save. From now on, nothing can go live without going through the preview step first, even by accident. (This closes the one hole in the golden loop: the pencil editor on GitHub could otherwise push straight to the live site.)
+
 ## Step 7: Business email (10 minutes, recommended)
 
 **Receiving** (free, Cloudflare Email Routing):
 
 1. Cloudflare dashboard → **Email** → **Email Routing** → Enable, select your domain.
-2. Add a destination address: your personal Gmail.
+2. Add a destination address: your personal Gmail. Cloudflare emails a verification link to that address: click it before continuing, or routing stays off.
 3. Create a custom address: `hello@yourdomain.com` → your Gmail. Add `noreply@` too if you'll use the contact form.
 4. Cloudflare adds the MX records. Test: send an email to `hello@yourdomain.com` and watch it land in your Gmail.
 
 **Sending** (free, Resend; needed for the contact form):
 
 1. Sign up at [resend.com](https://resend.com) (free tier).
-2. Add your domain, add the DNS records Resend shows you (SPF/DKIM), wait for verification.
+2. Add your domain, add the DNS records Resend shows you (SPF/DKIM), wait for verification. Finish this before you tell customers about the form: mail from an unverified domain lands in spam.
 3. Create an API key (Sending access only).
-4. Cloudflare → Pages → your site → **Settings** → **Environment variables** → Production → add `RESEND_API_KEY` (mark it secret/encrypted).
+4. Cloudflare → Pages → your site → **Settings** → **Environment variables** → Production → add two variables (mark them secret/encrypted):
+   - `RESEND_API_KEY`: the key from step 3.
+   - `CONTACT_TO_EMAIL`: the business email address where form messages should land. Without it, the form cannot deliver.
 5. Redeploy once (Deployments → latest → Retry deployment) so the function picks it up.
 
-Until the key exists, the contact form hides itself and shows your email address instead. Nothing breaks.
+Until the key exists, the form still shows on the page but cannot deliver: anyone who submits sees a note saying email is not set up yet and is asked to email you directly. Nothing breaks.
 
-**Replying as the business from Gmail** (optional): Gmail → Settings → Accounts → "Send mail as" → add `hello@yourdomain.com` using Resend's SMTP credentials. Now replies come from the business address.
+**Replying as the business from Gmail** (optional): Gmail → Settings → Accounts → "Send mail as" → add `hello@yourdomain.com` with these values: SMTP server `smtp.resend.com`, port `465`, username `resend`, password: your Resend API key. Now replies come from the business address.
 
 ## Step 8: Analytics (5 minutes, optional)
 

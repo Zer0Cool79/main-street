@@ -30,7 +30,7 @@ This document records what happens when the system is used badly, interrupted, n
 Scenario: the owner broke something at 9pm on a Saturday, no developer reachable, docs only.
 
 1. **Template README → "Made a mistake?"**: one-click Cloudflare rollback (Deployments → Rollback), no terminal. Discoverable from the README's first-week checklist.
-2. **Rollback discoverability**: also in `START-HERE.md`'s troubleshooting and the everyday-tasks cheat sheet ("Undo something"). Three independent paths to the same answer.
+2. **Rollback discoverability**: in the template README's "Made a mistake?" section (part of the first-week checklist) and in `docs/owner-quickstart.md`'s Undo entry. Two independent paths to the same answer; the AI also teaches the rollback line every time it ships.
 3. **"What just changed?"**: every change went through the staging loop, so the owner can open the staging link and compare. Git history exists as a last resort, via the AI ("what changed in the last update?").
 
 Verdict: a panicking non-technical owner can get the site back in under 5 minutes with docs alone. The weak link is step 0: the owner has to *remember the README exists*. Mitigation: the golden loop is simple enough to remember ("preview first, ship it after"), and the rollback path is in the first-week checklist they already read.
@@ -69,6 +69,7 @@ The owner launches, then ignores the site for a year. What survives?
 - **Dependency rot on next edit:** a year-old `package-lock` may fail to install cleanly. Mitigation: `npm install` regenerates; the build is simple enough that upgrades rarely break it. The AI handles this when the owner returns.
 - **Expired/revoked API keys:** Resend key revoked → contact form degrades to showing the email address (graceful, by design). Analytics token revoked → beacon 401s silently; page unaffected.
 - **Platform changes:** if Cloudflare changes Pages behavior, the AI adapts the config on the owner's next request. The site's simplicity is the hedge, there's very little *to* break.
+- **Domain lapse:** if the card on the Cloudflare account expires, the domain lapses and the site goes dark (the `*.pages.dev` address still works). Recovery: update the card, renew the domain, and give DNS up to a day to settle. The site itself is untouched.
 
 ### Security once-over
 

@@ -12,7 +12,7 @@ Every service this template uses, what it costs, and where the free tier ends. N
 | **Resend** | Sends the contact form emails | $0 | 3,000 emails/month free. A contact form would need a miracle to hit that. |
 | **Cloudflare Web Analytics** | Visitor stats, no cookies | $0 | Unlimited on free plan. |
 | **Cloudflare Turnstile** | Spam protection, if ever needed | $0 | Unlimited free. Off by default; add only if spam becomes real. |
-| **Supabase** | Database, only if you turn on email signup | $0 | 500MB database, generous API calls. Plenty for subscribers and form records. Not needed for most sites. |
+| **Supabase** | Database, only if you turn on email signup | $0 | 500MB database, generous API calls. Plenty for subscribers and form records. Not needed for most sites. Free projects pause after 7 days idle; the signup form silently fails until someone clicks Restore in the Supabase dashboard. |
 
 **Total: ~$10–12/year** (the domain, plus tax depending on the TLD).
 
@@ -35,7 +35,7 @@ pie title Where the $12/year goes
 - **No credit card required** for Cloudflare Pages, Email Routing, Web Analytics, or Turnstile. Resend's free tier also starts without one.
 - **No usage meters to watch.** Nothing here bills by the visit. Your site can go viral on local news and the bill stays $0.
 - **The domain is the only recurring cost**, and you own it outright. If you ever leave this setup, the domain goes with you.
-- **Your AI chat subscription is not part of the $12.** Most owners already pay for one (Claude, ChatGPT, or similar). This system uses your subscription, never API keys, so there is no usage bill attached to the site.
+- **Your AI chat subscription is not part of the $12.** Most owners already pay for one (Claude, ChatGPT, or similar). This system uses your subscription for the AI, never API keys or usage-based billing for it, so there is no usage bill attached to the site. (The site itself uses at most two free service keys: contact-form email and visitor stats.)
 
 ## What could cost money (and doesn't have to)
 

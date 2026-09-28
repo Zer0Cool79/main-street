@@ -6,7 +6,7 @@ Newsletter capture: visitor enters an email, it's stored with consent evidence, 
 
 Flag: `emailSignup` in `site.config.json`. Requires two things:
 
-1. **Supabase** (free tier) as the system of record: email, timestamp, IP, user agent. See `rules/supabase.md`. The table, RLS policies, and migration live in `supabase/`.
+1. **Supabase** (free tier) as the system of record: email, timestamp, IP, user agent. See `rules/supabase.md`. The table, RLS policies, and migration live in `supabase/`. Note: free Supabase projects pause after 7 days with no activity; the signup form silently fails until someone clicks **Restore** in the Supabase dashboard. If signups stop arriving, check there first.
 2. **A sending tool** (Kit, Buttondown, etc.). Supabase holds the consent evidence; the tool only sends. The tool is replaceable; the consent records are not.
 
 ## Before turning it on, tell the owner

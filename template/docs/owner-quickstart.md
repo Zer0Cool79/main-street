@@ -63,7 +63,7 @@ If your assistant isn't doing these things, say so: "Explain it like I'm new to 
 ## Things worth knowing
 
 - **No AI? No problem.** [docs/editing-in-browser.md](editing-in-browser.md) fixes typos straight on GitHub.com. No install, no chat needed.
-- **You can't break the money.** Every service here is free-tier. There is no bill to accidentally run up.
+- **You can't break the money.** Every service here is free-tier. There is no bill to accidentally run up. (The domain is the only thing that costs anything, about $10-12 a year, and renewing it is a once-a-year choice, not something a site change can trigger.)
 - **Almost everything is undoable.** The rollback button in Cloudflare undoes any deployment in one click.
 - **Small asks are best.** "Change the headline" beats "redesign the site." Big changes still work; they just get more preview rounds.
 - **Your words win.** If you dictate copy, it goes in verbatim. If the assistant rewrites your voice, tell it: "use my words exactly."

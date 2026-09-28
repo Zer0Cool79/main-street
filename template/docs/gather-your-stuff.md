@@ -22,7 +22,7 @@ Ten minutes, daylight, phone camera. You don't need all of these; more is just b
 4. **The inside.** What it feels like to walk in. Two or three angles.
 5. **Your team**, if you have one. People trust people.
 
-Put them in `content/brand/photos/` with simple names: `storefront.jpg`, `team.jpg`, `croissants.jpg`. (Your AI can do the filing if you just attach the photos in chat.)
+Put them in `content/brand/photos/` with simple names: `storefront.jpg`, `team.jpg`, `croissants.jpg`. (If your AI can reach your site files, it can do the filing if you just attach the photos in chat. A plain browser chat can't move files, so ask it for the exact GitHub clicks instead.)
 
 What makes a good phone photo: daylight beats flash, morning and late afternoon beat harsh midday sun, and one honest photo of your real place beats ten perfect stock shots.
 
