@@ -26,7 +26,16 @@ If that's you, keep reading. You need about an afternoon and a domain name (abou
 2. **You get a preview link.** Open it on your phone. It looks exactly like your site with the change applied.
 3. **You say "ship it."** Your live site updates in about a minute.
 
-That's the whole system. The preview step is what keeps your live site safe: nothing goes public until you've seen it and approved it. Made a mistake? One click rolls it back (your AI can show you where).
+That's the whole system. The preview step is what keeps your live site safe: nothing goes public until you've seen it and approved it. Made a mistake? Say "undo that" and your AI reverses it, or roll it back yourself in one click (your AI can show you where).
+
+## It doesn't end at launch
+
+Most of this system is about what happens *after* the site goes live, because that's when websites usually start rotting:
+
+- **Monthly checkup.** Say "run the monthly checkup" and your AI walks the site looking for stale hours, old photos, and broken links, then proposes fixes in plain English. The site taps you on the shoulder; you don't have to remember.
+- **Voice-note updates.** Talk instead of typing whenever you like. Your AI says back what it heard and takes it from there.
+- **"Undo that."** Every change is reversible in plain words.
+- **No new subscription, no lock-in.** It works with the AI assistant you already pay for (Claude, ChatGPT, Muse, or similar). Your site is plain files in your own GitHub repo, and the operating manual lives inside it, so any AI that can read the manual can run your site. Switch AIs tomorrow and nothing breaks.
 
 ## What it costs, honestly
 

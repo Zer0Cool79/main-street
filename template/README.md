@@ -37,6 +37,8 @@ https://github.com/user-attachments/assets/752e5e89-482f-40f9-b1c0-d4fab41c60b9
 
 More examples, including before-and-after walkthroughs: [docs/examples.md](docs/examples.md).
 
+You can also send a voice note instead of typing. Your AI will say back what it heard in one sentence and take it from there.
+
 ## Your first week
 
 Do these in order. Each one is small; together they take an afternoon.
@@ -53,9 +55,13 @@ Do these in order. Each one is small; together they take an afternoon.
 
 Then, when you're ready: [docs/setup-guide.md](docs/setup-guide.md) (your own domain name), [docs/owner-quickstart.md](docs/owner-quickstart.md) (getting good at directing your AI), [docs/faq.md](docs/faq.md).
 
+## Every month: the checkup
+
+Websites go stale when nobody looks at them. Once a month, say **"run the monthly checkup"** to your AI. It reviews the whole site for stale hours, old photos, leftover placeholder text, and broken links, then proposes fixes in plain English. You approve each one; nothing changes without your yes. This is how the site stays fresh without you having to remember.
+
 ## Made a mistake? Undo in one click
 
-Every version of your site is saved. If anything ever looks wrong:
+Every version of your site is saved. If anything ever looks wrong, the fastest fix is to tell your AI **"undo that"**: it puts the previous version on your preview site, you check it, and you say "ship it." Or do it yourself, any time:
 
 1. Open the **Cloudflare dashboard** → **Workers & Pages** → your site.
 2. Click **Deployments**.

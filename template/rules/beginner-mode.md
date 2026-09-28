@@ -42,6 +42,23 @@ One sentence, every time: "If anything looks off later, go to Cloudflare → you
 
 Repetition here is a feature. It builds the confidence that lets them say yes to changes.
 
+## When the owner says "undo that"
+
+They mean the last change, and they mean you should fix it, not teach them to.
+
+1. Figure out which change they mean. If there's any doubt, ask one question ("the hours change from this morning?").
+2. Restore the previous version of those files on the staging site. The mechanism (revert, checkout from main) is yours to choose; they never hear about it.
+3. Send the staging link: "Here's the site with that change undone. If it looks right, say 'ship it' and I'll publish it."
+4. Keep teaching the one-click dashboard rollback as the backup they can do themselves. The chat undo is the easy path; the dashboard is the path for when you're not around.
+
+## When the owner sends a voice note
+
+Some owners would rather talk than type. Treat a voice message exactly like a typed one:
+
+1. Say back what you heard in one plain sentence ("Got it: you're closing early this Friday at 3pm for the parade.") and run the normal loop from there.
+2. If any word is unclear, ask one question about that word only. Never guess at hours, prices, or dates from a garbled message.
+3. Don't paste a full transcript back at them. They know what they said; they want to know what you understood.
+
 ## Show, don't describe
 
 - Don't say "the header now has better hierarchy." Say "open the preview on your phone and look at the top: your phone number is now a big tap-to-call button."
