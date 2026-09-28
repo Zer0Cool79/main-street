@@ -4,7 +4,6 @@
 //   3. on build, emits sitemap.xml and robots.txt into dist/
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import type { OutputOptions } from "rollup";
 import type { Plugin } from "vite";
 
 type Config = Record<string, any>;
@@ -186,9 +185,10 @@ export function siteConfig(): Plugin {
       const cfg = loadConfig(root);
       return replaceTokens(stripFeatures(html, cfg), cfg);
     },
-    writeBundle(options: OutputOptions) {
+    writeBundle(options) {
       // Build-only: write sitemap.xml, robots.txt, and the token-filled
       // llms.txt straight to the output dir, overwriting the public/ templates.
+      // (options is typed by the Plugin contract; only options.dir is used.)
       const cfg = loadConfig(root);
       const domain = cfg.site?.domain ?? "example.com";
       const outDir = options.dir ?? resolve(root, "dist");
