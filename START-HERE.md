@@ -40,10 +40,11 @@ Open the address it prints (usually http://localhost:5173). The copy is neutral 
 
 Full walkthrough inside the site: `docs/setup-guide.md`. The short version:
 
-1. **Buy the domain** at Cloudflare Registrar (~$10/year, no markup).
-2. **Connect the site's repo to Cloudflare Pages**: Workers & Pages → Create → Continue to Pages → Import an existing Git repository → Get started → Connect to Git → pick the repo. Build command `npm run build`, output directory `dist`, framework preset None (there is no plain Vite option; do not pick the similar-looking VitePress or React (Vite)).
-3. **Push to the `staging` branch** → Cloudflare builds a preview at `staging.yourdomain.com`. The preview row appears after your first commit to `staging` once Cloudflare is connected; it will not exist before that. The owner reviews every change here.
-4. **Owner says "ship it"** → merge `staging` into `main` → the live domain updates in about a minute.
+1. **Buy the domain** at Cloudflare Registrar (~$10-12/year, no markup).
+2. **Save and push the site.** The scaffolder staged everything locally; now make it real. From your site folder: `git branch -M main`, then `git commit -m "First version of the site"`. Create the repo at github.com/new (same name as the folder), then `git remote add origin https://github.com/YOUR-ACCOUNT/YOUR-REPO.git` and `git push -u origin main`.
+3. **Connect the site's repo to Cloudflare Pages**: Workers & Pages → Create → Continue to Pages → Import an existing Git repository → Get started → Connect to Git → pick the repo. Build command `npm run build`, output directory `dist`, framework preset None (there is no plain Vite option; do not pick the similar-looking VitePress or React (Vite)).
+4. **Push to the `staging` branch** → Cloudflare builds a preview. Once you attach your custom domain (setup guide Step 6), the preview lives at `staging.yourdomain.com`; until then it's `staging.<project>.pages.dev`. The preview row appears after your first commit to `staging` once Cloudflare is connected; it will not exist before that. The owner reviews every change here.
+5. **Owner says "ship it"** → merge `staging` into `main` → the live domain updates in about a minute.
 
 ## 5. Hand it over
 

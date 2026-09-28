@@ -39,7 +39,7 @@ flowchart TD
 **Where to paste it:**
 1. Open the **Cloudflare dashboard** → **Workers & Pages** → click your site's project.
 2. Go to **Settings** → **Environment variables**.
-3. Under **Production**, click **Add variable**:
+3. Under **Production**, click **Add variable** (mark them secret/encrypted):
    - Name: `RESEND_API_KEY`, value: paste the key.
    - Name: `CONTACT_TO_EMAIL`, value: the email address where you want form messages delivered (usually your business email).
 4. (Optional) Under **Preview**, add the same two variables if you want the contact form to work on your staging site too.
@@ -50,9 +50,9 @@ Right now Resend sends from a generic address. To send from `noreply@yourdomain.
 1. In Resend's sidebar, click **Domains** → **Add Domain** → type your domain.
 2. Resend shows you 3 DNS records to add. Your AI can walk you through adding them in Cloudflare's DNS. It takes a few minutes, then Resend verifies automatically.
 
-**How to verify it worked:** open your **staging** site, fill in the contact form, hit send. The message should arrive at your CONTACT_TO_EMAIL inbox within a minute. If it doesn't, ask your AI: the usual culprit is a typo pasted into the key.
+**How to verify it worked:** open your **staging** site, fill in the contact form, hit send. The message should arrive at your CONTACT_TO_EMAIL inbox within a minute. Check the spam folder too, especially if you have not finished the optional domain verification below. If it doesn't arrive anywhere, ask your AI: the usual culprit is a typo pasted into the key.
 
-**If you skip it:** the contact form area shows your email address and phone number instead. Visitors can still reach you; the page never looks broken.
+**If you skip it:** the contact info next to the form still shows your email address and phone number, but the form itself will not deliver messages: anyone who submits sees a note saying email is not set up yet and is asked to email you directly. Add the key before you tell customers about the form.
 
 ## Key 2: Cloudflare Web Analytics (visitor stats)
 
@@ -118,6 +118,7 @@ my site's files).
 
 - **"Invalid API key"**: you probably copied it with a missing character. Delete the variable in Cloudflare, create a fresh key in Resend, and paste again carefully.
 - **Form sends but no email arrives**: check CONTACT_TO_EMAIL for a typo, and check your spam folder.
+- **Form suddenly stops working (it used to work)**: your Resend key may have been revoked or deleted. In Resend, go to **API Keys**: if yours is gone, create a new one with Sending access, replace the `RESEND_API_KEY` variable in Cloudflare (Pages → your site → Settings → Environment variables), and redeploy. To catch this early, submit a test message yourself once a month and confirm it arrives.
 - **Analytics shows nothing**: the `CF_ANALYTICS_TOKEN` in Cloudflare's environment variables must be the exact token from Web Analytics (the 32-character value inside `"token": "..."` in the snippet, not the whole snippet). And the site must be rebuilt *after* you added it: Deployments → ⋯ → Retry deployment. Stats only count visits to the live site, and only after the change is shipped there.
 
 Still stuck? Paste the error message into your AI and say which step you were on. That's a 5-minute fix, not a disaster.

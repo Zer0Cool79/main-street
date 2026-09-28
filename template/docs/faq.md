@@ -4,10 +4,10 @@
 No. The setup wizard asks plain-language questions, and day-to-day updates happen by talking to an AI assistant or editing text on GitHub.com. Reading this FAQ is the hardest technical thing you'll do.
 
 **What does it actually cost?**
-About $10–12/year for the domain name. Everything else is free-tier. Your AI chat subscription (Claude, ChatGPT, or similar) is separate, but it's one most owners already pay for, and this system never adds API usage charges on top of it.
+About $10–12/year for the domain name. Everything else is free-tier. Your AI chat subscription (Claude, ChatGPT, or similar) is separate, but it's one most owners already pay for (about $20/month if you don't have one yet), and this system never adds API usage charges on top of it.
 
 **Do I need to buy API access for the AI?**
-No. Your AI works on the chat subscription you already pay for. This system never uses API keys or usage-based billing, so the AI can't run up a charge. See [connect-your-ai.md](connect-your-ai.md).
+No. Your AI works on the chat subscription you already pay for, so the AI itself can never run up a usage charge. The site uses at most two free service keys (contact-form email, visitor stats); see [api-keys.md](api-keys.md).
 
 **Can I really not get a surprise bill?**
 Correct. No service here bills by usage on the tiers we use. The domain renews yearly; that's the only charge.
@@ -19,7 +19,7 @@ Cloudflare dashboard → Workers & Pages → your site → Deployments → find 
 Yes. It's your GitHub repo, your Cloudflare account, your domain. The template is just the starting point. If you stop using it, everything stays yours.
 
 **What if the AI assistant makes a mistake?**
-Tell it what you see in plain words. It can undo anything via git, and you can always roll back the deployment yourself. Mistakes here are cheap and reversible by design.
+Tell it what you see in plain words. It can undo anything, and you can always roll back the deployment yourself. Mistakes here are cheap and reversible by design.
 
 **Can I use my existing booking/scheduling tool?**
 Yes. The booking feature links to Acuity, Calendly, Square, Vagaro, whatever you use. The site sends people there; it doesn't replace it.

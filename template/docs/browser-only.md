@@ -55,14 +55,25 @@ Note: the hidden `.github` folder often does not come along in a drag (your comp
 
 **Step 4: Check the hidden folder made it.**
 
-Scroll through your repository's file list. You should see a folder named **`.github`** (with a dot in front). It runs automatic safety checks on your changes.
+Scroll through your repository's file list. You should see a folder named **`.github`** (with a dot in front). It runs automatic safety checks on your changes. (Cloudflare builds every branch except the production one automatically, so your staging branch gets its preview build with no extra settings needed.)
 
-- **If you see `.github`: ** you are done with this part.
+- **If you see `.github`:** you are done with this part.
 - **If you don't see it:** your computer hid it during the upload. This is normal and fixable in two minutes:
   1. In your repository, click **Add file** (top right), then **Create new file**.
   2. In the **name** box at the top, type exactly: `.github/workflows/ci.yml` (the slashes create the folders).
-  3. Open the downloaded ZIP's copy of this file on your computer (in the template folder, `.github/workflows/ci.yml`; on a Mac, open TextEdit first, then use File > Open and press Cmd+Shift+Period to reveal hidden files). Select all, copy.
+  3. Open the downloaded ZIP's copy of this file on your computer (in the template folder, `.github/workflows/ci.yml`). On a Mac, open TextEdit first, then use File > Open and press Cmd+Shift+Period to reveal hidden files. On Windows, in File Explorer open the folder and choose View > Show > Hidden items. Select all, copy.
   4. Paste into the big text box on GitHub. Click **Commit changes**.
+
+**Step 5: Add the last hidden file.**
+
+One more tiny file almost never survives the upload: `.node-version`. It tells the automatic checks which tools to use, and without it every change shows a confusing red X.
+
+1. Click **Add file** (top right), then **Create new file**.
+2. In the **name** box, type exactly: `.node-version`
+3. In the big text box, type exactly: `22`
+4. Click **Commit changes**.
+
+**A word about the checks.** After each save, GitHub runs an automatic check on your files. A green check mark means everything is fine. A red X means something in the files is broken. Do not panic: copy the error text into your chat and your AI will hand you the fix. Most fixes are one paste.
 
 Your repository now holds your entire website. Nothing is public yet; you have not connected anything.
 
@@ -92,8 +103,11 @@ to copy and paste. Never ask me to run a command.
 
 Start by interviewing me for the site setup, one question at a time: business
 name, tagline, address, phone, email, hours, services, prices, and anything
-else site.config.json needs. When you have asked everything, output the
-complete site.config.json file for me to paste into GitHub.
+else site.config.json needs. When you have asked everything, first ask me to
+open site.config.json on GitHub and paste its current contents here, so your
+version keeps every section and key exactly as the template has them. Do not
+invent, rename, or drop any keys. Then output the complete site.config.json
+file for me to paste into GitHub.
 ```
 
 ---
@@ -120,7 +134,7 @@ complete site.config.json file for me to paste into GitHub.
 
 Real photos beat everything. Use your phone.
 
-**Step 1: Pick 5 to 10 photos.** Storefront, interior, your work, your team. The best photos are bright and simple.
+**Step 1: Pick 5 to 10 photos.** Storefront, interior, your work, your team. The best photos are bright and simple. Use JPG or PNG photos: iPhones sometimes save photos as HEIC, which websites cannot display. To switch, open iPhone **Settings** → **Camera** → **Formats** → **Most Compatible** (new photos will be JPG).
 
 **Step 2: Upload them.**
 
@@ -166,7 +180,7 @@ This connects your GitHub repository to the service that publishes your site.
 - **Project name:** your business name in lowercase with dashes (this becomes your first web address, like `maple-street-bakery.pages.dev`).
 - **Production branch:** `main`
 - **Framework preset:** leave at **None**. (There is no plain Vite option in the list; the similar-looking VitePress and React (Vite) are different things. Do not pick them.)
-- **Build command:** `npm run build`
+- **Build command:** `npm run build` (typing this into the box on the website is fine; the thing you never do is type into a black terminal window)
 - **Build output directory:** `dist`
 - Leave everything else as is. Click **Save and Deploy**.
 
@@ -190,7 +204,7 @@ From here on, your job is the conversation: you talk, you look at your phone, yo
 
 **Step 2: Follow the AI's paste steps.** The AI will answer with exact steps: which file to open on github.com, what to find, and the complete replacement text. **Before you paste, check the branch dropdown says `staging`, not `main`.** Then commit.
 
-**Step 3: Open your staging preview on your phone.** The very first time, this commit is what triggers the preview build, so give Cloudflare two or three minutes, then find it: Cloudflare → your project → **Deployments** → the row whose **Branch** says `staging` → open its address. Bookmark it. Tap through every page: home, services, contact. Read every word out loud if you can; you will catch mistakes.
+**Step 3: Open your staging preview on your phone.** The very first time, this commit is what triggers the preview build, so give Cloudflare two or three minutes, then find it: go to dash.cloudflare.com, click **Workers & Pages** in the left menu, click your project name, then the **Deployments** tab → the row whose **Branch** says `staging` → open its address. Bookmark it. Tap through every page: home, services, contact. Read every word out loud if you can; you will catch mistakes.
 
 **Step 4: Repeat.** After each new commit to `staging`, wait a couple of minutes, then reload the staging link. If it looks unchanged, open it in a private/incognito window (your browser may be showing the old cached copy). Keep going until you love it. This loop is the whole job, now and forever.
 
@@ -198,11 +212,11 @@ From here on, your job is the conversation: you talk, you look at your phone, yo
 
 ## Part 9: Go live ("ship it", 5 minutes)
 
-When the staging site looks right, you publish it with three clicks.
+When the staging site looks right, you publish it with three clicks. A "pull request" is just GitHub's name for copying your staging draft into your live site. You are not asking anyone for anything.
 
 1. On github.com, in your repository, click **Pull requests** (top menu), then **New pull request**.
 2. Set the **base** dropdown to **`main`** and the **compare** dropdown to **`staging`**. (Read it as: "take what's in staging and put it into main.")
-3. Click **Create pull request**, then **Merge pull request**, then **Confirm merge**.
+3. Click **Create pull request**, then **Merge pull request**, then **Confirm merge**. If the merge button gets stuck saying "Checking for the ability to merge" for more than a minute, reload the page.
 4. Wait about a minute. Open your `pages.dev` address: your site is live.
 
 From now on, **"ship it"** means those clicks. You can also just tell your AI "ship it" and it will walk you through them.
@@ -211,7 +225,7 @@ From now on, **"ship it"** means those clicks. You can also just tell your AI "s
 
 ## Part 10: Your own domain (whenever you're ready)
 
-The `pages.dev` address works, but customers expect `yourbusiness.com`.
+The `pages.dev` address works, but customers expect `yourbusiness.com`. A domain costs about $10 to $15 per year, and that is the only money this whole project costs.
 
 **The simple version:** buy the domain inside Cloudflare so everything stays in one place: dash.cloudflare.com → **Domain Registration** → search and buy. Then in your Pages project → **Custom domains** → **Set up a custom domain** → enter your domain → Activate. Cloudflare handles the rest.
 

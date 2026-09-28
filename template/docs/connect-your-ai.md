@@ -1,6 +1,6 @@
 # Connect your AI: use the subscription you already pay for
 
-Your AI assistant is your web developer. It runs on the chat subscription you already have (Claude, ChatGPT, or similar). You do **not** need API keys, API credits, or any usage-based billing. If an AI ever asks you for an API key, say no and tell it to proceed without one.
+Your AI assistant is your web developer. It runs on the chat subscription you already have (Claude, ChatGPT, or similar). You do **not** need to buy API access or pay any usage-based billing for the AI itself. (Your site uses at most two free service keys for contact-form email and visitor stats; those are covered in [api-keys.md](api-keys.md) and have nothing to do with your AI.) If an AI ever asks you for an API key *for itself*, say no and tell it to proceed without one.
 
 Two people make this work, and one flow serves both.
 
@@ -12,7 +12,7 @@ There are no paths to choose. The owner opens the AI they already use and talks.
 ## If you're the owner: connect in two minutes
 
 1. Open the AI you already pay for: the Claude or ChatGPT app, their websites, or this chat.
-2. Give it the operating manual: attach your site's `CLAUDE.md`, or tell it where your site folder or repo lives. (Your helper may have already done this during setup.)
+2. Give it the operating manual: attach your site's `CLAUDE.md`, or tell it where your site folder lives. (Your helper may have already done this during setup.)
 3. Say: **"read CLAUDE.md."**
 
 Then just talk, like in [these real examples](examples.md):
@@ -21,7 +21,9 @@ Then just talk, like in [these real examples](examples.md):
 Change my Saturday hours to 9am to 2pm.
 ```
 
-The rhythm from here on: you ask, your AI puts the change on your private preview site and sends you the link, you look at it on your phone, you say **"ship it."** That's the entire job. If your AI ever asks you to choose between technical options, say: "you decide, just get me the preview link."
+The rhythm from here on: you ask, the change appears on your preview copy, you look at it on your phone, you say **"ship it."** That's the entire job. If your AI has direct access to your files, it edits them and sends you the preview link; if it doesn't, it hands you the exact clicks and paste text and you do the clicking, like in [the browser-only guide](browser-only.md). If your AI ever asks you to choose between technical options, say: "you decide, just get me the preview link."
+
+One thing to know: in a plain browser chat, the chat forgets the manual when you start a new conversation. Re-attach `CLAUDE.md` at the start of each new chat and say "read CLAUDE.md" again.
 
 **If all you have is this browser chat** (no coding app, no terminal, no helper): start with [docs/browser-only.md](browser-only.md). It is the complete path from a ChatGPT or Claude account to a live site, every step written out, nothing installed.
 
@@ -64,4 +66,4 @@ If its answer sounds right (changes go to the staging preview first, nothing goe
 - **"Which AI should the owner use?"** Whichever they already pay for. Claude, ChatGPT, muse.ai, all fine. Never make them buy something new.
 - **"The menus look different from the guide."** They move. Tell the AI where you are ("I'm on the settings page and I don't see...") and it will guide you from there.
 - **"The AI can't see the repo."** Attach `CLAUDE.md` to the chat. That file plus the question is enough for most tasks.
-- **"It asked for an API key."** It doesn't need one. Say: "No API keys. Work with my chat subscription." If it insists, it's confused; start a fresh chat.
+- **"It asked for an API key."** It doesn't need one for itself. Say: "No API keys for you. Work with my chat subscription." If it insists, it's confused; start a fresh chat.
